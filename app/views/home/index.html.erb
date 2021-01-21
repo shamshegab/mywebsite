@@ -1,0 +1,172 @@
+
+<div class="container-fluid" id="section1">
+    <div class="row align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="title-text col-12 my-auto animate-typing">
+                    Hello, my name is <span>Shams Hegab</span>.<br> I'm a Software Engineer.
+                </div>
+            </div>
+            <div class="row">
+                <div class="more-text col-12">
+                    <a id="learn"> <button class="glow-on-hover" type="button">Learn more about me.</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid" id="section2">
+    <div class="container">
+    <div class="row fl" >
+        <div class="row">
+            <div class="col-lg-8 class-sm-12 about"  data-aos="fade-right" data-aos-delay="100">
+                    <span>About me </span><br><br>
+                    I'm a Full-Stack Developer for HDBC in Alexandria, EG.<br>
+                     Demonstrated skill working in different segments. Skilled in Ruby on Rails, Java, Python, PHP, JavaScript and Native mobile development. Strong in Git and Linux. Having a tracked record of leadership positions. 
+                    <br><br>I have a serious passion for creating dynamic, animated and intuitive web experiences.<br><a id="contact">Let's make something special</a>
+                <br><br>
+            </div>
+
+            <div  class="col-lg-3 class-sm-12">
+                <div class="row">
+                    <div class="col-12 profile-img" data-aos="fade-left" data-aos-delay="100">
+                        <%=image_tag("profile.jpg",class: "profile")%>   
+                    </div>
+                </div>
+           
+                <div class="row">
+                    <div class="col-12 connect" data-aos="fade-left" >
+                        <%# <span>Connect</span><br><br> %>
+                        <p><%=image_tag("linkedin.png",:class => "icon")%><a href="#">Shams-Hegab</a></p>
+                        <p><%=image_tag("gmail.png",:class => "icon")%><a href="#">shamsheg@gmail.com</a></p>
+                        <p><%=image_tag("fb.png",:class => "icon")%><a href="#">Shams Sherif</a></p>
+                        <p><%=image_tag("insta.png",:class => "icon")%><a href="#">Shams Hegab</a></p>
+                         <p><%=image_tag("cv.png",:class => "icon")%><a href="#">Resume</a></p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row" >
+       <div class="text-box" >
+            <div  id="work" class="btn btn-white btn-animate">My Work</div>
+        </div>    
+     
+    </div>
+    </div>      
+           
+</div>
+
+<div class="container-fluid" id="section3">
+    <div class="container" style="text-align:center;" >
+       <h2 data-aos="fade-left" style="margin-top:5vh;font-size:5vh;font-family:'raleway';color: #37393a;"  ><strong > PROJECTS</strong></h2>
+       <div data-aos="fade-left" style="height:0.5vh;background-color: #37393a;width:5.2vw;margin-right:auto;margin-left:auto;"></div>
+     
+            <div class="row" style="margin-top:8vh;margin-bottom:6vh;">
+               
+                <%@projects.each do |project| %>
+                <div class="content col-md-4" data-aos="fade-right" data-aos-delay="0">
+                    <a >
+                        <div class="content-overlay"></div>
+     
+                        <%=image_tag(project.img.url, :class => "content-image")%>
+                        <div class="content-details fadeIn-bottom">
+                            <h3 class="content-title"><%= project.title %></h3>
+                            <p class="content-text"><%= project.lang %></p>
+                            <button type="button" class="btn-view btn btn-outline-info" style="color:white;background-color:transparent;border-style: solid;
+                            border-color: white;" onclick="getDetails(<%=project.id%>)">Details</button>
+
+                            
+
+                        </div>
+                    </a>
+                </div>
+
+                <%end %>
+            </div>
+      
+    </div>
+</div>
+
+<div class="container-fluid" id="section4" >
+    <h2  style="margin-top:15vh;font-size:5vh;font-family:'raleway';color: white;"  ><strong > Contact Me</strong></h2>
+       <div  style="height:0.7vh;background-color: white;font-family:'raleway';width:5.2vw;margin-right:auto;margin-left:auto;margin-bottom:6vh;"></div>
+    <span data-aos="fade-up" style="color:#0e98f4; font-size:2.5vh;">Have a question or want to work together?</span>
+
+    <div class="container" data-aos="fade-up" style="width:40vw;margin-top:4vh;">
+        <div class="col-6">
+            <form style="margin-bottom: 10vh;">
+  <div class="form-group" style="margin-bottom:0.5vh;">
+ 
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Name">
+  </div>
+  <div class="form-group" style="margin-bottom:0.5vh">
+    
+   <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email">
+  </div>
+  
+  <div class="form-group" style="margin-bottom:0.5vh">
+    
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Your message.."></textarea>
+  </div>
+ <div class="form-group" style="text-align:end;">
+  <button type="button" class="btn btn-outline-primary" style="margin-top:3vh">Submit</button>
+  </div>
+</form>
+        </div>
+    </div>
+
+</div>
+<div class="container-fluid" id="section5">
+Shams Hegab &#169; 2021
+</div>
+
+
+
+
+<div class="mask" ></div>
+	<div id="quick-view-pop-up" style="position:fixed;">
+		<div class="quick-view-panel">
+			<div class="quick-view-close">X</div>
+			<div class="quick-view-loading">
+				Quick View Loading... 
+			</div>
+			
+		
+			
+				<div class="image-large" style="margin-top:50px;">
+					<%=image_tag("digital.jpg", :class => "content-image vImg")%>
+						
+
+				</div>
+				
+				
+		
+			<div class="detail">
+				<div class="product-details">
+					<h3 class="product-name">Digital Dental Lab</h3>
+					
+					<p class="des"> An ERP system that manages patient cases, staff profiles, resources and accounting. Built using PHP, HTML & CSS to be used by Digital Dental Lab.
+				</div>
+				<div >
+                
+                <div class="buttons">
+                    <div>
+                        <a href="#" class="btn blue add-to-bag" target="_blank" > Visit </a>
+                    </div>
+                    
+                </div>
+            </div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+        
+        

@@ -1,0 +1,23 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  username: root
+  password:
+  host: localhost
+
+
+development:
+  <<: *default
+  database: my_website
+
+test:
+  <<: *default
+  database: test_db_name
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  username: deploy
+  password: shams2003Hegab
+  host: localhost
+  database: my_website

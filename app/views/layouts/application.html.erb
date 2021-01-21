@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ShamsHegab</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <script
+  src="https://code.jquery.com/jquery-3.1.0.js"
+  integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM="
+  crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+  </head>
+
+  <body class="example">
+ 
+    <%= yield %>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+function getDetails(id){
+	console.log("send");
+	
+	$.ajax({
+  type:"GET",
+  url:"/home/"+id,
+  dataType:"json",
+ 
+  success:function(result){
+	console.log(result);
+	$('.vImg').attr("src",result.img.url);
+	$('.product-name').html(result.title)
+	$('.des').html(result.description)
+	$('.add-to-bag').attr("href",result.link)
+	
+  },
+  error: function(er){
+	  console.log(er);
+	  
+  }
+})
+}
+$(document).ready(function() {
+
+	
+  var front = document.getElementsByClassName("front");
+  var back = document.getElementsByClassName("back");
+
+  var highest = 0;
+  var absoluteSide = "";
+
+  for (var i = 0; i < front.length; i++) {
+    if (front[i].offsetHeight > back[i].offsetHeight) {
+      if (front[i].offsetHeight > highest) {
+        highest = front[i].offsetHeight;
+        absoluteSide = ".front";
+      }
+    } else if (back[i].offsetHeight > highest) {
+      highest = back[i].offsetHeight;
+      absoluteSide = ".back";
+    }
+  }
+  $(".front").css("height", highest);
+  $(".back").css("height", highest);
+  $(absoluteSide).css("position", "absolute");
+});
+$("#learn").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#section2").offset().top
+    }, 100);
+});
+
+$("#work").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#section3").offset().top
+    }, 200);
+});
+
+
+
+$("#contact").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#section4").offset().top
+    }, 200);
+});
+
+
+$(window).ready(function (){
+  
+  var init = function(){
+	popup();
+
+  };
+
+  
+  var isDone = true;
+  
+	var popup = function(){
+		var $items = $('.mini-carousel ul');
+		var $linkClick = $('.mini-carousel ul li a');
+		$('.video-player').hide();
+		$('.btn-view').on('click', function(){
+			$('#quick-view-pop-up').fadeToggle();
+			$('#quick-view-pop-up').css({"top":"34px", "left":"314px"});
+			$('.mask').fadeToggle();
+		});
+		$('.mask').on('click', function(){
+			$('.mask').fadeOut();
+			$('#quick-view-pop-up').fadeOut();
+		});
+		$('.quick-view-close').on('click', function(){
+			$('.mask').fadeOut();
+			$('#quick-view-pop-up').fadeOut();
+		});
+    
+		$('.prev').on('click', function(){
+      			//animate on UL element of small image on the left
+      		if(!isDone) return;
+			if($items.position().top === 0){
+				$items.css({'top':'-125px'});
+				$items.children('li').last().prependTo($items);
+			}
+      		isDone = false;
+			$('.mini-carousel ul').animate({
+				top: "+=125px"
+			}, 200 ,  function(){
+          		isDone = true;
+        	});
+        	$('.image-large ul li').last().prependTo($('.image-large ul'));
+		});
+
+		$('.next').on('click', function(){
+				//animate on UL element of class 'mini-carousel'
+			if(!isDone) return;
+			
+      		if($items.position().top === 0){
+        		$items.css({'top': '125px'});
+				$items.children('li').first().appendTo($items);
+        	}      		
+      		isDone = false;
+      		$('.mini-carousel ul').animate({
+				top: "-=125px"
+			}, 300 ,  function(){
+        		isDone = true;
+        	});	
+			$('.image-large ul li').first().appendTo($('.image-large ul'));
+		});
+		$('.quick-view-video').on('click', function(){
+			$('.video-player').toggle();
+			$('.image-large ul').toggle();
+		});
+	};
+	
+
+	init();
+});
+</script>
+  </body>
+</html>
