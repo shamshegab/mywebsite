@@ -1,23 +1,27 @@
-default: &default
+development:
   adapter: mysql2
   encoding: utf8
+  reconnect: false
+  database: development
   username: root
-  password:
-  host: localhost
-
-
-development:
-  <<: *default
-  database: my_website
-
+  password: 
+  socket: /tmp/mysql.sock 
 test:
-  <<: *default
-  database: test_db_name
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: test
+
+  username: root
+  password: 
+  socket: /tmp/mysql.sock 
 
 production:
   adapter: mysql2
   encoding: utf8
-  username: deploy
-  password: shams2003Hegab
-  host: localhost
-  database: my_website
+  reconnect: false
+  database: production
+
+  username: root
+  password: qaz2wsx
+  socket: /tmp/mysql.sock 

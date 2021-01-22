@@ -1,0 +1,727 @@
+
+---
+active_admin_comments:
+  columns:
+  - id
+  - namespace
+  - body
+  - resource_type
+  - resource_id
+  - author_type
+  - author_id
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - admin
+    - asd
+    - Ahoy::Event
+    - 3
+    - AdminUser
+    - 1
+    - '2021-01-16 19:48:12.722904'
+    - '2021-01-16 19:48:12.722904'
+
+---
+admin_users:
+  columns:
+  - id
+  - email
+  - encrypted_password
+  - reset_password_token
+  - reset_password_sent_at
+  - remember_created_at
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - shamsheg@gmail.com
+    - "$2a$12$e7XeQSAW8U6NCbmzEfJ6L.ARl94XFJnvb/qN7BBC3SQpqORdj7sje"
+    -
+    -
+    - '2021-01-16 16:38:50.421005'
+    - '2021-01-16 16:38:19.120690'
+    - '2021-01-16 16:38:50.421456'
+
+---
+ahoy_events:
+  columns:
+  - id
+  - visit_id
+  - user_id
+  - name
+  - properties
+  - time
+  records: 
+  - - 1
+    - 1
+    -
+    - Processed home#index
+    - '{"controller":"home","action":"index"}'
+    - '2021-01-16 19:33:05.700152'
+  - - 2
+    - 1
+    -
+    - Processed home#show
+    - '{"controller":"home","action":"show","id":"1"}'
+    - '2021-01-16 19:38:07.525192'
+  - - 3
+    - 2
+    -
+    - Processed home#index
+    - '{"controller":"home","action":"index"}'
+    - '2021-01-16 19:39:26.397874'
+  - - 4
+    - 1
+    -
+    - Processed home#index
+    - '{"controller":"home","action":"index"}'
+    - '2021-01-16 19:47:46.553585'
+  - - 5
+    - 1
+    -
+    - Processed home#index
+    - '{"controller":"home","action":"index"}'
+    - '2021-01-16 19:48:46.530358'
+  - - 6
+    - 3
+    -
+    - Processed home#index
+    - '{"controller":"home","action":"index"}'
+    - '2021-01-16 19:50:29.867548'
+  - - 7
+    - 1
+    -
+    - Processed visits#index
+    - '{"controller":"admin/visits","action":"index"}'
+    - '2021-01-16 19:50:37.226992'
+  - - 8
+    - 1
+    -
+    - Processed visits#show
+    - '{"controller":"admin/visits","action":"show","id":"3"}'
+    - '2021-01-16 19:50:39.233577'
+  - - 9
+    - 1
+    -
+    - 'Processed home#show  '
+    - '{"controller":"home","action":"show","id":"1"}'
+    - '2021-01-16 19:51:45.071299'
+  - - 10
+    - 1
+    -
+    - Processed events#index
+    - '{"controller":"admin/events","action":"index"}'
+    - '2021-01-16 19:51:52.894385'
+  - - 11
+    - 1
+    -
+    - Processed events#show
+    - '{"controller":"admin/events","action":"show","id":"9"}'
+    - '2021-01-16 19:51:57.983308'
+  - - 12
+    - 1
+    -
+    - 'Processed home#show # '
+    - '{"controller":"home","action":"show","id":"2"}'
+    - '2021-01-16 19:52:13.399747'
+  - - 13
+    - 1
+    -
+    - Processed events#index
+    - '{"controller":"admin/events","action":"index"}'
+    - '2021-01-16 19:52:16.472459'
+  - - 14
+    - 1
+    -
+    - 'Processed home#show # '
+    - '{"controller":"home","action":"show","id":"3"}'
+    - '2021-01-16 20:23:40.984408'
+  - - 15
+    - 1
+    -
+    - 'Processed home#show # '
+    - '{"controller":"home","action":"show","id":"2"}'
+    - '2021-01-16 20:23:43.747375'
+  - - 16
+    - 1
+    -
+    - 'Processed home#show # '
+    - '{"controller":"home","action":"show","id":"1"}'
+    - '2021-01-16 20:23:47.001436'
+  - - 17
+    - 4
+    -
+    - 'Processed home#index # '
+    - '{"controller":"home","action":"index"}'
+    - '2021-01-22 16:51:21.712867'
+  - - 18
+    - 4
+    -
+    - 'Processed home#show # '
+    - '{"controller":"home","action":"show","id":"1"}'
+    - '2021-01-22 16:51:52.671098'
+  - - 19
+    - 4
+    -
+    - 'Processed home#show # '
+    - '{"controller":"home","action":"show","id":"2"}'
+    - '2021-01-22 16:52:50.079641'
+  - - 20
+    - 4
+    -
+    - 'Processed sessions#new # '
+    - '{"controller":"active_admin/devise/sessions","action":"new"}'
+    - '2021-01-22 16:53:57.096972'
+  - - 21
+    - 4
+    -
+    - 'Processed sessions#create # '
+    - '{"authenticity_token":"kvcbX36GHN7MwHBBQzp972T8N8M+/8hqrFrDPJGVTj8SbRqix7pdcPIYt0H1SlLU1JU9tNJeDJV8arX5bgXORw==","admin_user":{"email":"shamsheg@gmail.com","password":"[FILTERED]","remember_me":"0"},"commit":"Login","controller":"active_admin/devise/sessions","action":"create"}'
+    - '2021-01-22 16:54:09.273619'
+  - - 22
+    - 4
+    -
+    - 'Processed dashboard#index # '
+    - '{"controller":"admin/dashboard","action":"index"}'
+    - '2021-01-22 16:54:09.394149'
+  - - 23
+    - 4
+    -
+    - 'Processed projects#index # '
+    - '{"controller":"admin/projects","action":"index"}'
+    - '2021-01-22 16:54:15.117418'
+  - - 24
+    - 4
+    -
+    - 'Processed visits#index # '
+    - '{"controller":"admin/visits","action":"index"}'
+    - '2021-01-22 16:55:40.787675'
+  - - 25
+    - 4
+    -
+    - 'Processed visits#show # '
+    - '{"controller":"admin/visits","action":"show","id":"4"}'
+    - '2021-01-22 16:55:44.987048'
+  - - 26
+    - 4
+    -
+    - 'Processed visits#index # '
+    - '{"controller":"admin/visits","action":"index"}'
+    - '2021-01-22 16:55:53.756241'
+  - - 27
+    - 4
+    -
+    - 'Processed visits#show # '
+    - '{"controller":"admin/visits","action":"show","id":"4"}'
+    - '2021-01-22 16:57:28.391940'
+  - - 28
+    - 4
+    -
+    - 'Processed events#index # '
+    - '{"controller":"admin/events","action":"index"}'
+    - '2021-01-22 16:57:54.733369'
+  - - 29
+    - 4
+    -
+    - 'Processed events#show # '
+    - '{"controller":"admin/events","action":"show","id":"27"}'
+    - '2021-01-22 16:58:15.334142'
+  - - 30
+    - 4
+    -
+    - 'Processed visits#show # '
+    - '{"controller":"admin/visits","action":"show","id":"4"}'
+    - '2021-01-22 16:58:25.440787'
+  - - 31
+    - 4
+    -
+    - 'Processed comments#index # '
+    - '{"controller":"admin/comments","action":"index"}'
+    - '2021-01-22 16:58:32.612942'
+  - - 32
+    - 4
+    -
+    - 'Processed projects#index # '
+    - '{"controller":"admin/projects","action":"index"}'
+    - '2021-01-22 16:58:34.003625'
+  - - 33
+    - 4
+    -
+    - 'Processed projects#new # '
+    - '{"controller":"admin/projects","action":"new"}'
+    - '2021-01-22 16:58:36.659718'
+  - - 34
+    - 4
+    -
+    - 'Processed projects#create # '
+    - '{"authenticity_token":"iVuk2nwVm855QwA/89CkVGoqNJYJCcwYosggEJJuOTR4fOxnOcJU6adMbgF2DEdDI48SX6d+bUDxJ1HJXGavgw==","project":{"title":"test","description":"asdffsfafadsdfasa
+      dasdsa","lang":"PHP","link":"das","img":{"tempfile":"#\u003cFile:0x00007fc483fc77a0\u003e","original_filename":"IMG_0206.jpg","content_type":"image/jpeg","headers":"Content-Disposition:
+      form-data; name=\"project[img]\"; filename=\"IMG_0206.jpg\"\r\nContent-Type:
+      image/jpeg\r\n"}},"commit":"Create Project","controller":"admin/projects","action":"create"}'
+    - '2021-01-22 16:58:59.086898'
+  - - 35
+    - 4
+    -
+    - 'Processed projects#show # '
+    - '{"controller":"admin/projects","action":"show","id":"4"}'
+    - '2021-01-22 16:58:59.253848'
+  - - 36
+    - 4
+    -
+    - 'Processed home#index # '
+    - '{"controller":"home","action":"index"}'
+    - '2021-01-22 16:59:02.412451'
+  - - 37
+    - 4
+    -
+    - 'Processed home#index # '
+    - '{"controller":"home","action":"index"}'
+    - '2021-01-22 16:59:11.050677'
+  - - 38
+    - 4
+    -
+    - 'Processed projects#index # '
+    - '{"controller":"admin/projects","action":"index"}'
+    - '2021-01-22 16:59:19.496857'
+  - - 39
+    - 4
+    -
+    - 'Processed projects#edit # '
+    - '{"controller":"admin/projects","action":"edit","id":"1"}'
+    - '2021-01-22 16:59:25.392206'
+  - - 40
+    - 4
+    -
+    - 'Processed projects#index # '
+    - '{"controller":"admin/projects","action":"index"}'
+    - '2021-01-22 16:59:28.985924'
+  - - 41
+    - 4
+    -
+    - 'Processed projects#edit # '
+    - '{"controller":"admin/projects","action":"edit","id":"4"}'
+    - '2021-01-22 16:59:30.669657'
+  - - 42
+    - 4
+    -
+    - 'Processed projects#update # '
+    - '{"_method":"patch","authenticity_token":"qsTVhAJ5ZHudc6fqZnISGNK00esnbhBzlEDBvkKT0LJb4505R66rXEN8ydTjrvEPmxH3IokZsSvHr7BnjJtGBQ==","project":{"title":"test","description":"asdffsfafadsdfasa
+      dasdsa","lang":"PHP","link":"https://digitaldentalco.com/views/caseSearch.html"},"commit":"Update
+      Project","controller":"admin/projects","action":"update","id":"4"}'
+    - '2021-01-22 16:59:33.733906'
+  - - 43
+    - 4
+    -
+    - 'Processed projects#show # '
+    - '{"controller":"admin/projects","action":"show","id":"4"}'
+    - '2021-01-22 16:59:33.871405'
+  - - 44
+    - 4
+    -
+    - 'Processed home#index # '
+    - '{"controller":"home","action":"index"}'
+    - '2021-01-22 16:59:35.646138'
+  - - 45
+    - 4
+    -
+    - 'Processed projects#index # '
+    - '{"controller":"admin/projects","action":"index"}'
+    - '2021-01-22 16:59:42.916796'
+  - - 46
+    - 4
+    -
+    - 'Processed projects#edit # '
+    - '{"controller":"admin/projects","action":"edit","id":"3"}'
+    - '2021-01-22 16:59:44.894185'
+  - - 47
+    - 4
+    -
+    - 'Processed projects#update # '
+    - '{"_method":"patch","authenticity_token":"t5boV5nVWE0ZHlXdP0KWpORQ4L2YoU+R5OmYH7scwHdGsaDq3AKXascRO+O6nnWzrfXGdDbW7sm3BunGdRRWwA==","project":{"title":"X
+      notes","description":"A simple notes application that offers basic note taking
+      features accompanied by a great design. Developed as a native Android application,
+      which is available on Play Store.","lang":"Android","link":"https://play.google.com/store/apps/details?id=yosh.loci.com.xnotes","img":{"tempfile":"#\u003cFile:0x00007fc48191fbc0\u003e","original_filename":"DS1_5257.JPEG","content_type":"image/jpeg","headers":"Content-Disposition:
+      form-data; name=\"project[img]\"; filename=\"DS1_5257.JPEG\"\r\nContent-Type:
+      image/jpeg\r\n"}},"commit":"Update Project","controller":"admin/projects","action":"update","id":"3"}'
+    - '2021-01-22 16:59:50.761844'
+  - - 48
+    - 4
+    -
+    - 'Processed projects#show # '
+    - '{"controller":"admin/projects","action":"show","id":"3"}'
+    - '2021-01-22 16:59:50.876517'
+  - - 49
+    - 4
+    -
+    - 'Processed home#index # '
+    - '{"controller":"home","action":"index"}'
+    - '2021-01-22 16:59:52.179150'
+  - - 50
+    - 4
+    -
+    - 'Processed projects#edit # '
+    - '{"controller":"admin/projects","action":"edit","id":"3"}'
+    - '2021-01-22 17:00:04.260622'
+  - - 51
+    - 4
+    -
+    - 'Processed projects#update # '
+    - '{"_method":"patch","authenticity_token":"D7lp4vyRCc1iMjAW2eXAr0loFGWVyCOcr1y/TIhMdyn+niFfuUbG6rw9XihcOSO4AM0yrDu/gsT8s86VRkThng==","project":{"title":"X
+      notes","description":"A simple notes application that offers basic note taking
+      features accompanied by a great design. Developed as a native Android application,
+      which is available on Play Store.","lang":"Android","link":"https://play.google.com/store/apps/details?id=yosh.loci.com.xnotes","img":{"tempfile":"#\u003cFile:0x00007fc47e460358\u003e","original_filename":"xnotes2.jpg","content_type":"image/jpeg","headers":"Content-Disposition:
+      form-data; name=\"project[img]\"; filename=\"xnotes2.jpg\"\r\nContent-Type:
+      image/jpeg\r\n"}},"commit":"Update Project","controller":"admin/projects","action":"update","id":"3"}'
+    - '2021-01-22 17:00:56.080355'
+  - - 52
+    - 4
+    -
+    - 'Processed projects#show # '
+    - '{"controller":"admin/projects","action":"show","id":"3"}'
+    - '2021-01-22 17:00:56.364909'
+  - - 53
+    - 4
+    -
+    - 'Processed home#index # '
+    - '{"controller":"home","action":"index"}'
+    - '2021-01-22 17:00:57.715850'
+  - - 54
+    - 4
+    -
+    - 'Processed projects#index # '
+    - '{"controller":"admin/projects","action":"index"}'
+    - '2021-01-22 17:01:03.264615'
+  - - 55
+    - 4
+    -
+    - 'Processed projects#edit # '
+    - '{"controller":"admin/projects","action":"edit","id":"4"}'
+    - '2021-01-22 17:01:06.899634'
+  - - 56
+    - 4
+    -
+    - 'Processed projects#update # '
+    - '{"_method":"patch","authenticity_token":"LNemRd64f0rG+YRdAqzVKZKi7qEOvrc/cEyJG08PN5nd8O74m2+wbRj26mOHcDY+2wfIaKDJFmcjo/jCgQehLg==","project":{"title":"test","description":"asdffsfafadsdfasa
+      dasdsa","lang":"PHP","link":"https://digitaldentalco.com/views/caseSearch.html","img":{"tempfile":"#\u003cFile:0x00007fc48718aee0\u003e","original_filename":"abo.jpg","content_type":"image/jpeg","headers":"Content-Disposition:
+      form-data; name=\"project[img]\"; filename=\"abo.jpg\"\r\nContent-Type: image/jpeg\r\n"}},"commit":"Update
+      Project","controller":"admin/projects","action":"update","id":"4"}'
+    - '2021-01-22 17:01:15.692709'
+  - - 57
+    - 4
+    -
+    - 'Processed projects#show # '
+    - '{"controller":"admin/projects","action":"show","id":"4"}'
+    - '2021-01-22 17:01:15.861856'
+  - - 58
+    - 4
+    -
+    - 'Processed home#index # '
+    - '{"controller":"home","action":"index"}'
+    - '2021-01-22 17:01:18.275430'
+  - - 59
+    - 4
+    -
+    - 'Processed home#show # '
+    - '{"controller":"home","action":"show","id":"4"}'
+    - '2021-01-22 17:01:36.262000'
+  - - 60
+    - 4
+    -
+    - 'Processed home#show # '
+    - '{"controller":"home","action":"show","id":"4"}'
+    - '2021-01-22 17:01:41.054131'
+  - - 61
+    - 4
+    -
+    - 'Processed projects#edit # '
+    - '{"controller":"admin/projects","action":"edit","id":"4"}'
+    - '2021-01-22 17:01:47.550955'
+  - - 62
+    - 4
+    -
+    - 'Processed projects#update # '
+    - '{"_method":"patch","authenticity_token":"nupAb5S2jpP5BF7NowQd2PObTS4bjgjHTNFhWhmeKRxvzQjS0WFBtCcLMPMm2P7Puj5r57X5qZ8fPhCD15a/qw==","project":{"title":"test","description":"asdffsfafadsdfasa
+      dasdsa","lang":"PHP","link":"https://digitaldentalco.com/views/caseSearch.html","img":{"tempfile":"#\u003cFile:0x00007fc483c3a3a8\u003e","original_filename":"Screen
+      Shot 2021-01-15 at 5.25.32 PM.png","content_type":"image/png","headers":"Content-Disposition:
+      form-data; name=\"project[img]\"; filename=\"Screen Shot 2021-01-15 at 5.25.32
+      PM.png\"\r\nContent-Type: image/png\r\n"}},"commit":"Update Project","controller":"admin/projects","action":"update","id":"4"}'
+    - '2021-01-22 17:01:58.207823'
+  - - 63
+    - 4
+    -
+    - 'Processed projects#show # '
+    - '{"controller":"admin/projects","action":"show","id":"4"}'
+    - '2021-01-22 17:01:58.345296'
+  - - 64
+    - 4
+    -
+    - 'Processed home#index # '
+    - '{"controller":"home","action":"index"}'
+    - '2021-01-22 17:02:00.210376'
+  - - 65
+    - 4
+    -
+    - 'Processed projects#destroy # '
+    - '{"_method":"delete","authenticity_token":"2yDGxlNYXcKeslHzFwlxFpZ32fuw3zasee+h9w0/R4IqB457Fo+S5UC9P82S1ZIB39L/Mh6ol/QqANAuwzfRNQ==","controller":"admin/projects","action":"destroy","id":"4"}'
+    - '2021-01-22 17:02:12.702154'
+  - - 66
+    - 4
+    -
+    - 'Processed projects#index # '
+    - '{"controller":"admin/projects","action":"index"}'
+    - '2021-01-22 17:02:12.902909'
+  - - 67
+    - 4
+    -
+    - 'Processed home#index # '
+    - '{"controller":"home","action":"index"}'
+    - '2021-01-22 17:03:24.817131'
+  - - 68
+    - 4
+    -
+    - 'Processed home#show # '
+    - '{"controller":"home","action":"show","id":"1"}'
+    - '2021-01-22 17:06:37.575425'
+  - - 69
+    - 4
+    -
+    - 'Processed home#show # '
+    - '{"controller":"home","action":"show","id":"2"}'
+    - '2021-01-22 17:08:38.554209'
+  - - 70
+    - 4
+    -
+    - 'Processed home#show # '
+    - '{"controller":"home","action":"show","id":"2"}'
+    - '2021-01-22 17:09:29.936120'
+  - - 71
+    - 4
+    -
+    - 'Processed home#show # '
+    - '{"controller":"home","action":"show","id":"1"}'
+    - '2021-01-22 17:20:41.945059'
+  - - 72
+    - 4
+    -
+    - 'Processed home#show # '
+    - '{"controller":"home","action":"show","id":"1"}'
+    - '2021-01-22 17:26:31.753480'
+  - - 73
+    - 4
+    -
+    - 'Processed home#index # '
+    - '{"controller":"home","action":"index"}'
+    - '2021-01-22 17:30:04.290216'
+  - - 74
+    - 4
+    -
+    - 'Processed home#show # '
+    - '{"controller":"home","action":"show","id":"2"}'
+    - '2021-01-22 17:30:13.628056'
+  - - 75
+    - 4
+    -
+    - 'Processed home#show # '
+    - '{"controller":"home","action":"show","id":"1"}'
+    - '2021-01-22 17:30:31.053936'
+  - - 76
+    - 4
+    -
+    - 'Processed home#show # '
+    - '{"controller":"home","action":"show","id":"3"}'
+    - '2021-01-22 17:30:44.850246'
+
+---
+ahoy_visits:
+  columns:
+  - id
+  - visit_token
+  - visitor_token
+  - user_id
+  - ip
+  - user_agent
+  - referrer
+  - referring_domain
+  - landing_page
+  - browser
+  - os
+  - device_type
+  - country
+  - region
+  - city
+  - latitude
+  - longitude
+  - utm_source
+  - utm_medium
+  - utm_term
+  - utm_content
+  - utm_campaign
+  - app_version
+  - os_version
+  - platform
+  - started_at
+  records: 
+  - - 1
+    - b550eff4-addc-4233-be23-9cf005feac7c
+    - 90b37a98-4f77-4df4-8c85-48ebcb19f2f5
+    -
+    - 127.0.0.1
+    - Mozilla/5.0 (Macintosh; Intel Mac OS X 11_1_0) AppleWebKit/537.36 (KHTML, like
+      Gecko) Chrome/87.0.4280.141 Safari/537.36
+    -
+    -
+    - http://localhost:3000/
+    - Chrome
+    - Mac
+    - Desktop
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    - '2021-01-16 19:26:43.761213'
+  - - 2
+    - 4e4fbb6e-9d4f-4a83-a226-048d8716bf75
+    - 0e450ff1-9c16-4600-9df8-93d1684e8d77
+    -
+    - 192.168.1.120
+    - Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15
+      (KHTML, like Gecko) CriOS/87.0.4280.77 Mobile/15E148 Safari/604.1
+    -
+    -
+    - http://192.168.1.103:3000/
+    - Chrome Mobile iOS
+    - iOS
+    - Mobile
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    - '2021-01-16 19:39:26.305664'
+  - - 3
+    - 5f5d3454-f08a-4133-9719-c385b2de4bc8
+    - 35399473-159e-4174-9347-2e74d706697b
+    -
+    - 127.0.0.1
+    - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML,
+      like Gecko) Version/14.0.2 Safari/605.1.15
+    -
+    -
+    - http://localhost:3000/
+    - Safari
+    - Mac
+    - Desktop
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    - '2021-01-16 19:50:29.486369'
+  - - 4
+    - 24815d30-648f-4672-8fb8-3acb4fb66d19
+    - 90b37a98-4f77-4df4-8c85-48ebcb19f2f5
+    -
+    - "::1"
+    - Mozilla/5.0 (Macintosh; Intel Mac OS X 11_1_0) AppleWebKit/537.36 (KHTML, like
+      Gecko) Chrome/88.0.4324.96 Safari/537.36
+    -
+    -
+    - http://localhost:3000/
+    - Chrome
+    - Mac
+    - Desktop
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    -
+    - '2021-01-22 16:51:21.302423'
+
+---
+ar_internal_metadata:
+  columns:
+  - key
+  - value
+  - created_at
+  - updated_at
+  records: 
+  - - environment
+    - development
+    - '2021-01-16 16:38:18.774226'
+    - '2021-01-16 16:38:18.774226'
+
+---
+projects:
+  columns:
+  - id
+  - title
+  - description
+  - img
+  - link
+  - lang
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - Digital Dental Lab
+    - An ERP system that manages patient cases, staff profiles, resources and accounting.
+      Built using PHP, HTML & CSS to be used by Digital Dental Lab.
+    - digital.jpg
+    - https://digitaldentalco.com/views/caseSearch.html
+    - PHP
+    - '2021-01-16 18:04:05.414655'
+    - '2021-01-16 18:08:37.613255'
+  - - 2
+    - Abo Bakr ElKady
+    - online platform for the islamic content of Abo Bakr Elkady. The content varies
+      from speeches, articles, books, courses and Quran. Buitl as full Ruby on Rails
+      application.
+    - abo.jpg
+    - ''
+    - Ruby on Rails
+    - '2021-01-16 18:12:11.384609'
+    - '2021-01-16 18:12:11.384609'
+  - - 3
+    - X notes
+    - A simple notes application that offers basic note taking features accompanied
+      by a great design. Developed as a native Android application, which is available
+      on Play Store.
+    - xnotes2.jpg
+    - https://play.google.com/store/apps/details?id=yosh.loci.com.xnotes
+    - Android
+    - '2021-01-16 18:14:34.805275'
+    - '2021-01-22 17:00:56.018978'

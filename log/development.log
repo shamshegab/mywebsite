@@ -12451,245 +12451,1280 @@ Processing by HomeController#show as JSON
 Completed 200 OK in 25ms (Views: 2.4ms | ActiveRecord: 2.9ms | Allocations: 4621)
 
 
-Started GET "/" for 192.168.1.13 at 2021-01-17 09:51:09 +0200
-Cannot render console from 192.168.1.13! Allowed networks: 127.0.0.0/127.255.255.255, ::1
-  [1m[35m (3.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
-  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2021-01-22 18:51:20 +0200
+  [1m[35m (5.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (7.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Processing by HomeController#index as HTML
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mAhoy::Visit Create (2.5ms)[0m  [1m[32mINSERT INTO "ahoy_visits" ("visit_token", "visitor_token", "ip", "user_agent", "landing_page", "browser", "os", "device_type", "started_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["visit_token", "4e0948b4-1886-4e94-b03e-ad765ae97c91"], ["visitor_token", "d260fe53-dbac-4cf6-b9cf-e216db6e2a0f"], ["ip", "192.168.1.13"], ["user_agent", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36"], ["landing_page", "http://192.168.1.10:3000/"], ["browser", "Chrome"], ["os", "GNU/Linux"], ["device_type", "Desktop"], ["started_at", "2021-01-17 07:51:10.274600"]]
-  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
-[ActiveJob] Enqueued Ahoy::GeocodeV2Job (Job ID: 78535c68-8cf8-4fd4-855f-09c77d673378) to Async(ahoy) with arguments: "4e0948b4-1886-4e94-b03e-ad765ae97c91", "192.168.1.13"
-[ActiveJob] [Ahoy::GeocodeV2Job] [78535c68-8cf8-4fd4-855f-09c77d673378] Performing Ahoy::GeocodeV2Job (Job ID: 78535c68-8cf8-4fd4-855f-09c77d673378) from Async(ahoy) enqueued at 2021-01-17T07:51:10Z with arguments: "4e0948b4-1886-4e94-b03e-ad765ae97c91", "192.168.1.13"
-[ActiveJob] [Ahoy::GeocodeV2Job] [78535c68-8cf8-4fd4-855f-09c77d673378] Performed Ahoy::GeocodeV2Job (Job ID: 78535c68-8cf8-4fd4-855f-09c77d673378) from Async(ahoy) in 8.77ms
+  [1m[36mAhoy::Visit Create (2.2ms)[0m  [1m[32mINSERT INTO "ahoy_visits" ("visit_token", "visitor_token", "ip", "user_agent", "landing_page", "browser", "os", "device_type", "started_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["visitor_token", "90b37a98-4f77-4df4-8c85-48ebcb19f2f5"], ["ip", "::1"], ["user_agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_1_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36"], ["landing_page", "http://localhost:3000/"], ["browser", "Chrome"], ["os", "Mac"], ["device_type", "Desktop"], ["started_at", "2021-01-22 16:51:21.302423"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] Enqueued Ahoy::GeocodeV2Job (Job ID: 574f2d27-8357-45ed-a318-dca9d671fc52) to Async(ahoy) with arguments: "24815d30-648f-4672-8fb8-3acb4fb66d19", "::1"
+[ActiveJob] [Ahoy::GeocodeV2Job] [574f2d27-8357-45ed-a318-dca9d671fc52] Performing Ahoy::GeocodeV2Job (Job ID: 574f2d27-8357-45ed-a318-dca9d671fc52) from Async(ahoy) enqueued at 2021-01-22T16:51:21Z with arguments: "24815d30-648f-4672-8fb8-3acb4fb66d19", "::1"
+[ActiveJob] [Ahoy::GeocodeV2Job] [574f2d27-8357-45ed-a318-dca9d671fc52] Performed Ahoy::GeocodeV2Job (Job ID: 574f2d27-8357-45ed-a318-dca9d671fc52) from Async(ahoy) in 4.54ms
   Rendering home/index.html.erb within layouts/application
-  [1m[36mProject Load (1.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mProject Load (0.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
   ↳ app/views/home/index.html.erb:71
-  Rendered home/index.html.erb within layouts/application (Duration: 167.3ms | Allocations: 44226)
+  Rendered home/index.html.erb within layouts/application (Duration: 233.7ms | Allocations: 42298)
 [Webpacker] Everything's up-to-date. Nothing to do
-  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   ↳ app/controllers/application_controller.rb:5:in `track_action'
-  [1m[36mAhoy::Event Create (4.7ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed home#index # "], ["properties", "{\"controller\":\"home\",\"action\":\"index\"}"], ["time", "2021-01-17 07:51:10.694429"]]
+  [1m[36mAhoy::Event Create (5.0ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed home#index # "], ["properties", "{\"controller\":\"home\",\"action\":\"index\"}"], ["time", "2021-01-22 16:51:21.712867"]]
   ↳ app/controllers/application_controller.rb:5:in `track_action'
-  [1m[35m (10.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
   ↳ app/controllers/application_controller.rb:5:in `track_action'
-Completed 200 OK in 775ms (Views: 257.0ms | ActiveRecord: 26.4ms | Allocations: 197988)
+Completed 200 OK in 1026ms (Views: 313.4ms | ActiveRecord: 14.0ms | Allocations: 198138)
 
 
-Started GET "/home/2" for 192.168.1.13 at 2021-01-17 09:51:36 +0200
-Cannot render console from 192.168.1.13! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/home/1" for ::1 at 2021-01-22 18:51:52 +0200
+Processing by HomeController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `show'
+  [1m[36mAhoy::Visit Load (0.6ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (1.9ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed home#show # "], ["properties", "{\"controller\":\"home\",\"action\":\"show\",\"id\":\"1\"}"], ["time", "2021-01-22 16:51:52.671098"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 75ms (Views: 1.2ms | ActiveRecord: 5.2ms | Allocations: 7605)
+
+
+Started GET "/home/2" for ::1 at 2021-01-22 18:52:50 +0200
 Processing by HomeController#show as JSON
   Parameters: {"id"=>"2"}
-  [1m[36mProject Load (0.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (3.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
   ↳ app/controllers/home_controller.rb:8:in `show'
-  [1m[36mAhoy::Visit Load (0.4ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "4e0948b4-1886-4e94-b03e-ad765ae97c91"], ["LIMIT", 1]]
-  ↳ app/controllers/application_controller.rb:5:in `track_action'
-  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
-  ↳ app/controllers/application_controller.rb:5:in `track_action'
-  [1m[36mAhoy::Event Create (1.6ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed home#show # "], ["properties", "{\"controller\":\"home\",\"action\":\"show\",\"id\":\"2\"}"], ["time", "2021-01-17 07:51:36.429230"]]
-  ↳ app/controllers/application_controller.rb:5:in `track_action'
-  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
-  ↳ app/controllers/application_controller.rb:5:in `track_action'
-Completed 200 OK in 27ms (Views: 0.7ms | ActiveRecord: 5.5ms | Allocations: 5178)
-
-
-Started GET "/home/2" for 192.168.1.13 at 2021-01-17 09:52:12 +0200
-Cannot render console from 192.168.1.13! Allowed networks: 127.0.0.0/127.255.255.255, ::1
-Processing by HomeController#show as JSON
-  Parameters: {"id"=>"2"}
-  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:8:in `show'
-  [1m[36mAhoy::Visit Load (0.2ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "4e0948b4-1886-4e94-b03e-ad765ae97c91"], ["LIMIT", 1]]
+  [1m[36mAhoy::Visit Load (0.3ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
   ↳ app/controllers/application_controller.rb:5:in `track_action'
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   ↳ app/controllers/application_controller.rb:5:in `track_action'
-  [1m[36mAhoy::Event Create (0.9ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed home#show # "], ["properties", "{\"controller\":\"home\",\"action\":\"show\",\"id\":\"2\"}"], ["time", "2021-01-17 07:52:12.024200"]]
+  [1m[36mAhoy::Event Create (1.6ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed home#show # "], ["properties", "{\"controller\":\"home\",\"action\":\"show\",\"id\":\"2\"}"], ["time", "2021-01-22 16:52:50.079641"]]
   ↳ app/controllers/application_controller.rb:5:in `track_action'
-  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
   ↳ app/controllers/application_controller.rb:5:in `track_action'
-Completed 200 OK in 19ms (Views: 0.5ms | ActiveRecord: 3.8ms | Allocations: 4613)
+Completed 200 OK in 32ms (Views: 0.5ms | ActiveRecord: 14.1ms | Allocations: 4573)
 
 
-Started GET "/" for 192.168.1.12 at 2021-01-17 09:55:10 +0200
-Cannot render console from 192.168.1.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
-Processing by HomeController#index as HTML
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mAhoy::Visit Create (0.8ms)[0m  [1m[32mINSERT INTO "ahoy_visits" ("visit_token", "visitor_token", "ip", "user_agent", "landing_page", "browser", "os", "device_type", "started_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["visit_token", "4c8c6d10-f266-40db-a629-486b24c00fcb"], ["visitor_token", "41834a15-3510-4281-98bc-37213a83e8d8"], ["ip", "192.168.1.12"], ["user_agent", "Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.77 Mobile/15E148 Safari/604.1"], ["landing_page", "http://192.168.1.10:3000/"], ["browser", "Chrome Mobile iOS"], ["os", "iOS"], ["device_type", "Mobile"], ["started_at", "2021-01-17 07:55:10.308515"]]
-  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
-[ActiveJob] Enqueued Ahoy::GeocodeV2Job (Job ID: bb915861-f538-4ef5-bdfa-1623bae6f79f) to Async(ahoy) with arguments: "4c8c6d10-f266-40db-a629-486b24c00fcb", "192.168.1.12"
-  Rendering home/index.html.erb within layouts/application
-[ActiveJob] [Ahoy::GeocodeV2Job] [bb915861-f538-4ef5-bdfa-1623bae6f79f] Performing Ahoy::GeocodeV2Job (Job ID: bb915861-f538-4ef5-bdfa-1623bae6f79f) from Async(ahoy) enqueued at 2021-01-17T07:55:10Z with arguments: "4c8c6d10-f266-40db-a629-486b24c00fcb", "192.168.1.12"
-[ActiveJob] [Ahoy::GeocodeV2Job] [bb915861-f538-4ef5-bdfa-1623bae6f79f] Performed Ahoy::GeocodeV2Job (Job ID: bb915861-f538-4ef5-bdfa-1623bae6f79f) from Async(ahoy) in 0.33ms
-  [1m[36mProject Load (2.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
-  ↳ app/views/home/index.html.erb:71
-  Rendered home/index.html.erb within layouts/application (Duration: 52.3ms | Allocations: 4644)
-[Webpacker] Everything's up-to-date. Nothing to do
-  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
-  ↳ app/controllers/application_controller.rb:5:in `track_action'
-  [1m[36mAhoy::Event Create (1.2ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 5], ["name", "Processed home#index # "], ["properties", "{\"controller\":\"home\",\"action\":\"index\"}"], ["time", "2021-01-17 07:55:10.415997"]]
-  ↳ app/controllers/application_controller.rb:5:in `track_action'
-  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
-  ↳ app/controllers/application_controller.rb:5:in `track_action'
-Completed 200 OK in 124ms (Views: 88.9ms | ActiveRecord: 9.5ms | Allocations: 17272)
+Started GET "/admin" for ::1 at 2021-01-22 18:53:56 +0200
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 8ms (ActiveRecord: 0.0ms | Allocations: 532)
 
 
-Started GET "/" for 192.168.1.12 at 2021-01-17 09:55:12 +0200
-Cannot render console from 192.168.1.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
-Processing by HomeController#index as HTML
-  Rendering home/index.html.erb within layouts/application
-  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
-  ↳ app/views/home/index.html.erb:71
-  Rendered home/index.html.erb within layouts/application (Duration: 21.0ms | Allocations: 4236)
-[Webpacker] Everything's up-to-date. Nothing to do
-  [1m[36mAhoy::Visit Load (0.8ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "4c8c6d10-f266-40db-a629-486b24c00fcb"], ["LIMIT", 1]]
+Started GET "/admin/login" for ::1 at 2021-01-22 18:53:56 +0200
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/devise/shared/_links.erb (Duration: 2.5ms | Allocations: 569)
+  Rendered /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (Duration: 102.7ms | Allocations: 8965)
+  [1m[36mAhoy::Visit Load (0.2ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
   ↳ app/controllers/application_controller.rb:5:in `track_action'
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   ↳ app/controllers/application_controller.rb:5:in `track_action'
-  [1m[36mAhoy::Event Create (1.5ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 5], ["name", "Processed home#index # "], ["properties", "{\"controller\":\"home\",\"action\":\"index\"}"], ["time", "2021-01-17 07:55:12.202537"]]
+  [1m[36mAhoy::Event Create (0.6ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed sessions#new # "], ["properties", "{\"controller\":\"active_admin/devise/sessions\",\"action\":\"new\"}"], ["time", "2021-01-22 16:53:57.096972"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 263ms (Views: 209.5ms | ActiveRecord: 4.3ms | Allocations: 35603)
+
+
+Started POST "/admin/login" for ::1 at 2021-01-22 18:54:08 +0200
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"kvcbX36GHN7MwHBBQzp972T8N8M+/8hqrFrDPJGVTj8SbRqix7pdcPIYt0H1SlLU1JU9tNJeDJV8arX5bgXORw==", "admin_user"=>{"email"=>"shamsheg@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mAdminUser Load (3.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."email" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["email", "shamsheg@gmail.com"], ["LIMIT", 1]]
+  [1m[36mAhoy::Visit Load (0.2ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admin
+  [1m[36mCACHE Ahoy::Visit Load (0.0ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (0.6ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed sessions#create # "], ["properties", "{\"authenticity_token\":\"kvcbX36GHN7MwHBBQzp972T8N8M+/8hqrFrDPJGVTj8SbRqix7pdcPIYt0H1SlLU1JU9tNJeDJV8arX5bgXORw==\",\"admin_user\":{\"email\":\"shamsheg@gmail.com\",\"password\":\"[FILTERED]\",\"remember_me\":\"0\"},\"commit\":\"Login\",\"controller\":\"active_admin/devise/sessions\",\"action\":\"create\"}"], ["time", "2021-01-22 16:54:09.273619"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 302 Found in 322ms (ActiveRecord: 5.4ms | Allocations: 11091)
+
+
+Started GET "/admin" for ::1 at 2021-01-22 18:54:09 +0200
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/page/index.html.arb
+  Rendered /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/page/index.html.arb (Duration: 58.1ms | Allocations: 19584)
+  [1m[36mAhoy::Visit Load (0.3ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (0.6ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed dashboard#index # "], ["properties", "{\"controller\":\"admin/dashboard\",\"action\":\"index\"}"], ["time", "2021-01-22 16:54:09.394149"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 85ms (Views: 61.3ms | ActiveRecord: 2.4ms | Allocations: 25946)
+
+
+Started GET "/admin/projects" for ::1 at 2021-01-22 18:54:14 +0200
+Processing by Admin::ProjectsController#index as HTML
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "projects" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "projects" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "projects" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" ORDER BY "projects"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/index.html.arb (Duration: 311.5ms | Allocations: 47072)
+  [1m[36mAhoy::Visit Load (0.2ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (0.9ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed projects#index # "], ["properties", "{\"controller\":\"admin/projects\",\"action\":\"index\"}"], ["time", "2021-01-22 16:54:15.117418"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 363ms (Views: 319.8ms | ActiveRecord: 4.5ms | Allocations: 54255)
+
+
+Started GET "/admin/visits" for ::1 at 2021-01-22 18:55:40 +0200
+Processing by Admin::VisitsController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "ahoy_visits" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "ahoy_visits" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "ahoy_visits"[0m
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "ahoy_visits" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mAhoy::Visit Load (0.4ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" ORDER BY "ahoy_visits"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mAhoy::Event Load (0.4ms)[0m  [1m[34mSELECT "ahoy_events".* FROM "ahoy_events"[0m
+  Rendered /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/index.html.arb (Duration: 281.9ms | Allocations: 78524)
+  [1m[36mAhoy::Visit Load (0.2ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (0.8ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed visits#index # "], ["properties", "{\"controller\":\"admin/visits\",\"action\":\"index\"}"], ["time", "2021-01-22 16:55:40.787675"]]
   ↳ app/controllers/application_controller.rb:5:in `track_action'
   [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
   ↳ app/controllers/application_controller.rb:5:in `track_action'
-Completed 200 OK in 87ms (Views: 44.6ms | ActiveRecord: 4.6ms | Allocations: 12198)
+Completed 200 OK in 319ms (Views: 288.5ms | ActiveRecord: 4.8ms | Allocations: 84977)
 
 
-Started GET "/" for 192.168.1.13 at 2021-01-17 10:56:37 +0200
-Cannot render console from 192.168.1.13! Allowed networks: 127.0.0.0/127.255.255.255, ::1
-  [1m[35m (3.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
-  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/admin/visits/4" for ::1 at 2021-01-22 18:55:44 +0200
+Processing by Admin::VisitsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAhoy::Visit Load (0.4ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/show.html.arb
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "Ahoy::Visit"], ["resource_id", 4], ["namespace", "admin"]]
+  [1m[36mActiveAdmin::Comment Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?[0m  [["resource_type", "Ahoy::Visit"], ["resource_id", 4], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  Rendered /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/show.html.arb (Duration: 181.4ms | Allocations: 44094)
+  [1m[36mAhoy::Visit Load (0.2ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (0.8ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed visits#show # "], ["properties", "{\"controller\":\"admin/visits\",\"action\":\"show\",\"id\":\"4\"}"], ["time", "2021-01-22 16:55:44.987048"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 213ms (Views: 187.1ms | ActiveRecord: 8.6ms | Allocations: 51726)
+
+
+Started GET "/admin/visits" for ::1 at 2021-01-22 18:55:53 +0200
+Processing by Admin::VisitsController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "ahoy_visits" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "ahoy_visits" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "ahoy_visits"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "ahoy_visits" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mAhoy::Visit Load (1.5ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" ORDER BY "ahoy_visits"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mAhoy::Event Load (0.5ms)[0m  [1m[34mSELECT "ahoy_events".* FROM "ahoy_events"[0m
+  Rendered /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/index.html.arb (Duration: 258.4ms | Allocations: 69053)
+  [1m[36mAhoy::Visit Load (0.4ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (0.9ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed visits#index # "], ["properties", "{\"controller\":\"admin/visits\",\"action\":\"index\"}"], ["time", "2021-01-22 16:55:53.756241"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 284ms (Views: 258.2ms | ActiveRecord: 7.5ms | Allocations: 74740)
+
+
+Started GET "/admin/visits/4" for ::1 at 2021-01-22 18:57:28 +0200
+Processing by Admin::VisitsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdminUser Load (3.7ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAhoy::Visit Load (0.3ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/show.html.arb
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "Ahoy::Visit"], ["resource_id", 4], ["namespace", "admin"]]
+  [1m[36mActiveAdmin::Comment Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?[0m  [["resource_type", "Ahoy::Visit"], ["resource_id", 4], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  Rendered /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/show.html.arb (Duration: 113.0ms | Allocations: 36931)
+  [1m[36mAhoy::Visit Load (0.4ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (0.7ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed visits#show # "], ["properties", "{\"controller\":\"admin/visits\",\"action\":\"show\",\"id\":\"4\"}"], ["time", "2021-01-22 16:57:28.391940"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 146ms (Views: 113.0ms | ActiveRecord: 9.0ms | Allocations: 43544)
+
+
+Started GET "/admin/events" for ::1 at 2021-01-22 18:57:54 +0200
+Processing by Admin::EventsController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "ahoy_events" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "ahoy_events" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "ahoy_events"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "ahoy_events" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mAhoy::Event Load (0.4ms)[0m  [1m[34mSELECT "ahoy_events".* FROM "ahoy_events" ORDER BY "ahoy_events"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mAhoy::Visit Load (0.5ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits"[0m
+  Rendered /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/index.html.arb (Duration: 207.4ms | Allocations: 87700)
+  [1m[36mAhoy::Visit Load (0.2ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (0.6ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed events#index # "], ["properties", "{\"controller\":\"admin/events\",\"action\":\"index\"}"], ["time", "2021-01-22 16:57:54.733369"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 230ms (Views: 211.8ms | ActiveRecord: 4.1ms | Allocations: 94147)
+
+
+Started GET "/admin/events/27" for ::1 at 2021-01-22 18:58:15 +0200
+Processing by Admin::EventsController#show as HTML
+  Parameters: {"id"=>"27"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAhoy::Event Load (0.3ms)[0m  [1m[34mSELECT "ahoy_events".* FROM "ahoy_events" WHERE "ahoy_events"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  Rendering /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/show.html.arb
+  [1m[36mAhoy::Visit Load (0.2ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "Ahoy::Event"], ["resource_id", 27], ["namespace", "admin"]]
+  [1m[36mActiveAdmin::Comment Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?[0m  [["resource_type", "Ahoy::Event"], ["resource_id", 27], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  Rendered /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/show.html.arb (Duration: 112.0ms | Allocations: 36856)
+  [1m[36mAhoy::Visit Load (0.2ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (1.8ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed events#show # "], ["properties", "{\"controller\":\"admin/events\",\"action\":\"show\",\"id\":\"27\"}"], ["time", "2021-01-22 16:58:15.334142"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 138ms (Views: 115.0ms | ActiveRecord: 5.1ms | Allocations: 44119)
+
+
+Started GET "/admin/visits/4" for ::1 at 2021-01-22 18:58:25 +0200
+Processing by Admin::VisitsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAhoy::Visit Load (0.3ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/show.html.arb
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "Ahoy::Visit"], ["resource_id", 4], ["namespace", "admin"]]
+  [1m[36mActiveAdmin::Comment Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?[0m  [["resource_type", "Ahoy::Visit"], ["resource_id", 4], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  Rendered /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/show.html.arb (Duration: 139.1ms | Allocations: 36924)
+  [1m[36mAhoy::Visit Load (0.3ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (2.3ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed visits#show # "], ["properties", "{\"controller\":\"admin/visits\",\"action\":\"show\",\"id\":\"4\"}"], ["time", "2021-01-22 16:58:25.440787"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 172ms (Views: 141.8ms | ActiveRecord: 5.8ms | Allocations: 43544)
+
+
+Started GET "/admin/comments" for ::1 at 2021-01-22 18:58:32 +0200
+Processing by Admin::CommentsController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = ?[0m  [["namespace", "admin"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?) subquery_for_count[0m  [["namespace", "admin"], ["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?) subquery_for_count[0m  [["namespace", "admin"], ["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = ?[0m  [["namespace", "admin"]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?) subquery_for_count[0m  [["namespace", "admin"], ["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mActiveAdmin::Comment Load (1.7ms)[0m  [1m[34mSELECT "active_admin_comments".* FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = ? ORDER BY "active_admin_comments"."id" desc LIMIT ? OFFSET ?[0m  [["namespace", "admin"], ["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ?[0m  [["id", 1]]
+  [1m[36mAhoy::Event Load (0.4ms)[0m  [1m[34mSELECT "ahoy_events".* FROM "ahoy_events" WHERE "ahoy_events"."id" = ?[0m  [["id", 3]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT DISTINCT "active_admin_comments"."resource_type" FROM "active_admin_comments" ORDER BY resource_type asc[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT DISTINCT "active_admin_comments"."author_type" FROM "active_admin_comments" ORDER BY author_type asc[0m
+  Rendered /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/index.html.arb (Duration: 213.0ms | Allocations: 55722)
+  [1m[36mAhoy::Visit Load (0.4ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (1.4ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed comments#index # "], ["properties", "{\"controller\":\"admin/comments\",\"action\":\"index\"}"], ["time", "2021-01-22 16:58:32.612942"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 287ms (Views: 213.7ms | ActiveRecord: 10.9ms | Allocations: 62214)
+
+
+Started GET "/admin/projects" for ::1 at 2021-01-22 18:58:33 +0200
+Processing by Admin::ProjectsController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "projects" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "projects" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "projects" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects" ORDER BY "projects"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/index.html.arb (Duration: 134.2ms | Allocations: 43742)
+  [1m[36mAhoy::Visit Load (0.2ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (0.9ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed projects#index # "], ["properties", "{\"controller\":\"admin/projects\",\"action\":\"index\"}"], ["time", "2021-01-22 16:58:34.003625"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 156ms (Views: 132.5ms | ActiveRecord: 6.6ms | Allocations: 49414)
+
+
+Started GET "/admin/projects/new" for ::1 at 2021-01-22 18:58:36 +0200
+Processing by Admin::ProjectsController#new as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/new.html.arb
+  Rendered /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/new.html.arb (Duration: 89.0ms | Allocations: 28440)
+  [1m[36mAhoy::Visit Load (0.6ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (0.8ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed projects#new # "], ["properties", "{\"controller\":\"admin/projects\",\"action\":\"new\"}"], ["time", "2021-01-22 16:58:36.659718"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 124ms (Views: 102.5ms | ActiveRecord: 3.2ms | Allocations: 34834)
+
+
+Started POST "/admin/projects" for ::1 at 2021-01-22 18:58:58 +0200
+Processing by Admin::ProjectsController#create as HTML
+  Parameters: {"authenticity_token"=>"iVuk2nwVm855QwA/89CkVGoqNJYJCcwYosggEJJuOTR4fOxnOcJU6adMbgF2DEdDI48SX6d+bUDxJ1HJXGavgw==", "project"=>{"title"=>"test", "description"=>"asdffsfafadsdfasa dasdsa", "lang"=>"PHP", "link"=>"das", "img"=>#<ActionDispatch::Http::UploadedFile:0x00007fc483fac3d8 @tempfile=#<Tempfile:/var/folders/qf/dldr76_j4d7427ftm2dgqbzm0000gn/T/RackMultipart20210122-1494-2w2wvv.jpg>, @original_filename="IMG_0206.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"project[img]\"; filename=\"IMG_0206.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Project"}
+  [1m[36mAdminUser Load (3.0ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProject Create (1.4ms)[0m  [1m[32mINSERT INTO "projects" ("title", "description", "img", "link", "lang", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "test"], ["description", "asdffsfafadsdfasa dasdsa"], ["img", "IMG_0206.jpg"], ["link", "das"], ["lang", "PHP"], ["created_at", "2021-01-22 16:58:59.007730"], ["updated_at", "2021-01-22 16:58:59.007730"]]
+  [1m[35m (7.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/admin/projects/4
+  [1m[36mAhoy::Visit Load (0.3ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (2.4ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed projects#create # "], ["properties", "{\"authenticity_token\":\"iVuk2nwVm855QwA/89CkVGoqNJYJCcwYosggEJJuOTR4fOxnOcJU6adMbgF2DEdDI48SX6d+bUDxJ1HJXGavgw==\",\"project\":{\"title\":\"test\",\"description\":\"asdffsfafadsdfasa dasdsa\",\"lang\":\"PHP\",\"link\":\"das\",\"img\":{\"tempfile\":\"#\\u003cFile:0x00007fc483fc77a0\\u003e\",\"original_filename\":\"IMG_0206.jpg\",\"content_type\":\"image/jpeg\",\"headers\":\"Content-Disposition: form-data; name=\\\"project[img]\\\"; filename=\\\"IMG_0206.jpg\\\"\\r\\nContent-Type: image/jpeg\\r\\n\"}},\"commit\":\"Create Project\",\"controller\":\"admin/projects\",\"action\":\"create\"}"], ["time", "2021-01-22 16:58:59.086898"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 302 Found in 150ms (ActiveRecord: 17.2ms | Allocations: 15432)
+
+
+Started GET "/admin/projects/4" for ::1 at 2021-01-22 18:58:59 +0200
+Processing by Admin::ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/show.html.arb
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "Project"], ["resource_id", 4], ["namespace", "admin"]]
+  [1m[36mActiveAdmin::Comment Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?[0m  [["resource_type", "Project"], ["resource_id", 4], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  Rendered /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/show.html.arb (Duration: 90.5ms | Allocations: 32695)
+  [1m[36mAhoy::Visit Load (0.2ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (0.7ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed projects#show # "], ["properties", "{\"controller\":\"admin/projects\",\"action\":\"show\",\"id\":\"4\"}"], ["time", "2021-01-22 16:58:59.253848"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 124ms (Views: 97.4ms | ActiveRecord: 3.9ms | Allocations: 40756)
+
+
+Started GET "/" for ::1 at 2021-01-22 18:59:02 +0200
 Processing by HomeController#index as HTML
   Rendering home/index.html.erb within layouts/application
   [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
   ↳ app/views/home/index.html.erb:71
-  Rendered home/index.html.erb within layouts/application (Duration: 179.9ms | Allocations: 40490)
+  Rendered home/index.html.erb within layouts/application (Duration: 42.0ms | Allocations: 4362)
 [Webpacker] Everything's up-to-date. Nothing to do
-  [1m[36mAhoy::Visit Load (0.4ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "4e0948b4-1886-4e94-b03e-ad765ae97c91"], ["LIMIT", 1]]
+  [1m[36mAhoy::Visit Load (0.2ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
   ↳ app/controllers/application_controller.rb:5:in `track_action'
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   ↳ app/controllers/application_controller.rb:5:in `track_action'
-  [1m[36mAhoy::Event Create (1.3ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed home#index # "], ["properties", "{\"controller\":\"home\",\"action\":\"index\"}"], ["time", "2021-01-17 08:56:37.906658"]]
+  [1m[36mAhoy::Event Create (1.1ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed home#index # "], ["properties", "{\"controller\":\"home\",\"action\":\"index\"}"], ["time", "2021-01-22 16:59:02.412451"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 114ms (Views: 91.6ms | ActiveRecord: 4.8ms | Allocations: 12396)
+
+
+Started GET "/" for ::1 at 2021-01-22 18:59:10 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mProject Load (1.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/home/index.html.erb:71
+  Rendered home/index.html.erb within layouts/application (Duration: 41.8ms | Allocations: 4342)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mAhoy::Visit Load (0.3ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (1.8ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed home#index # "], ["properties", "{\"controller\":\"home\",\"action\":\"index\"}"], ["time", "2021-01-22 16:59:11.050677"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 136ms (Views: 87.7ms | ActiveRecord: 9.0ms | Allocations: 12349)
+
+
+Started GET "/admin/projects" for ::1 at 2021-01-22 18:59:19 +0200
+Processing by Admin::ProjectsController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "projects" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "projects" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "projects" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" ORDER BY "projects"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/index.html.arb (Duration: 152.4ms | Allocations: 45696)
+  [1m[36mAhoy::Visit Load (0.3ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (0.7ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed projects#index # "], ["properties", "{\"controller\":\"admin/projects\",\"action\":\"index\"}"], ["time", "2021-01-22 16:59:19.496857"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 182ms (Views: 151.1ms | ActiveRecord: 7.7ms | Allocations: 51367)
+
+
+Started GET "/admin/projects/1/edit" for ::1 at 2021-01-22 18:59:25 +0200
+Processing by Admin::ProjectsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/edit.html.arb (Duration: 74.5ms | Allocations: 30253)
+  [1m[36mAhoy::Visit Load (0.8ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (1.8ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed projects#edit # "], ["properties", "{\"controller\":\"admin/projects\",\"action\":\"edit\",\"id\":\"1\"}"], ["time", "2021-01-22 16:59:25.392206"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 127ms (Views: 95.1ms | ActiveRecord: 5.3ms | Allocations: 37717)
+
+
+Started GET "/admin/projects" for ::1 at 2021-01-22 18:59:28 +0200
+Processing by Admin::ProjectsController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "projects" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "projects" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "projects" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" ORDER BY "projects"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/index.html.arb (Duration: 153.6ms | Allocations: 45747)
+  [1m[36mAhoy::Visit Load (0.5ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (0.8ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed projects#index # "], ["properties", "{\"controller\":\"admin/projects\",\"action\":\"index\"}"], ["time", "2021-01-22 16:59:28.985924"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 183ms (Views: 154.5ms | ActiveRecord: 6.8ms | Allocations: 51418)
+
+
+Started GET "/admin/projects/4/edit" for ::1 at 2021-01-22 18:59:30 +0200
+Processing by Admin::ProjectsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/edit.html.arb (Duration: 56.9ms | Allocations: 28953)
+  [1m[36mAhoy::Visit Load (0.5ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (0.7ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed projects#edit # "], ["properties", "{\"controller\":\"admin/projects\",\"action\":\"edit\",\"id\":\"4\"}"], ["time", "2021-01-22 16:59:30.669657"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 87ms (Views: 58.2ms | ActiveRecord: 5.8ms | Allocations: 35550)
+
+
+Started PATCH "/admin/projects/4" for ::1 at 2021-01-22 18:59:33 +0200
+Processing by Admin::ProjectsController#update as HTML
+  Parameters: {"authenticity_token"=>"qsTVhAJ5ZHudc6fqZnISGNK00esnbhBzlEDBvkKT0LJb4505R66rXEN8ydTjrvEPmxH3IokZsSvHr7BnjJtGBQ==", "project"=>{"title"=>"test", "description"=>"asdffsfafadsdfasa dasdsa", "lang"=>"PHP", "link"=>"https://digitaldentalco.com/views/caseSearch.html"}, "commit"=>"Update Project", "id"=>"4"}
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProject Update (0.6ms)[0m  [1m[33mUPDATE "projects" SET "link" = ?, "updated_at" = ? WHERE "projects"."id" = ?[0m  [["link", "https://digitaldentalco.com/views/caseSearch.html"], ["updated_at", "2021-01-22 16:59:33.681460"], ["id", 4]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/admin/projects/4
+  [1m[36mAhoy::Visit Load (0.5ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (1.0ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed projects#update # "], ["properties", "{\"_method\":\"patch\",\"authenticity_token\":\"qsTVhAJ5ZHudc6fqZnISGNK00esnbhBzlEDBvkKT0LJb4505R66rXEN8ydTjrvEPmxH3IokZsSvHr7BnjJtGBQ==\",\"project\":{\"title\":\"test\",\"description\":\"asdffsfafadsdfasa dasdsa\",\"lang\":\"PHP\",\"link\":\"https://digitaldentalco.com/views/caseSearch.html\"},\"commit\":\"Update Project\",\"controller\":\"admin/projects\",\"action\":\"update\",\"id\":\"4\"}"], ["time", "2021-01-22 16:59:33.733906"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 302 Found in 84ms (ActiveRecord: 6.8ms | Allocations: 16010)
+
+
+Started GET "/admin/projects/4" for ::1 at 2021-01-22 18:59:33 +0200
+Processing by Admin::ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/show.html.arb
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "Project"], ["resource_id", 4], ["namespace", "admin"]]
+  [1m[36mActiveAdmin::Comment Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?[0m  [["resource_type", "Project"], ["resource_id", 4], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  Rendered /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/show.html.arb (Duration: 78.3ms | Allocations: 31206)
+  [1m[36mAhoy::Visit Load (0.2ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (0.7ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed projects#show # "], ["properties", "{\"controller\":\"admin/projects\",\"action\":\"show\",\"id\":\"4\"}"], ["time", "2021-01-22 16:59:33.871405"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 97ms (Views: 79.1ms | ActiveRecord: 3.7ms | Allocations: 37992)
+
+
+Started GET "/" for ::1 at 2021-01-22 18:59:35 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/home/index.html.erb:71
+  Rendered home/index.html.erb within layouts/application (Duration: 22.7ms | Allocations: 4362)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mAhoy::Visit Load (0.4ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (1.2ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed home#index # "], ["properties", "{\"controller\":\"home\",\"action\":\"index\"}"], ["time", "2021-01-22 16:59:35.646138"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 69ms (Views: 49.0ms | ActiveRecord: 3.5ms | Allocations: 12398)
+
+
+Started GET "/admin/projects" for ::1 at 2021-01-22 18:59:42 +0200
+Processing by Admin::ProjectsController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "projects" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "projects" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "projects" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" ORDER BY "projects"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/index.html.arb (Duration: 106.0ms | Allocations: 45316)
+  [1m[36mAhoy::Visit Load (0.2ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (0.6ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed projects#index # "], ["properties", "{\"controller\":\"admin/projects\",\"action\":\"index\"}"], ["time", "2021-01-22 16:59:42.916796"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 123ms (Views: 106.7ms | ActiveRecord: 3.7ms | Allocations: 50970)
+
+
+Started GET "/admin/projects/3/edit" for ::1 at 2021-01-22 18:59:44 +0200
+Processing by Admin::ProjectsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/edit.html.arb (Duration: 87.3ms | Allocations: 28955)
+  [1m[36mAhoy::Visit Load (0.3ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (6.0ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed projects#edit # "], ["properties", "{\"controller\":\"admin/projects\",\"action\":\"edit\",\"id\":\"3\"}"], ["time", "2021-01-22 16:59:44.894185"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 128ms (Views: 88.6ms | ActiveRecord: 9.1ms | Allocations: 35563)
+
+
+Started PATCH "/admin/projects/3" for ::1 at 2021-01-22 18:59:50 +0200
+Processing by Admin::ProjectsController#update as HTML
+  Parameters: {"authenticity_token"=>"t5boV5nVWE0ZHlXdP0KWpORQ4L2YoU+R5OmYH7scwHdGsaDq3AKXascRO+O6nnWzrfXGdDbW7sm3BunGdRRWwA==", "project"=>{"title"=>"X notes", "description"=>"A simple notes application that offers basic note taking features accompanied by a great design. Developed as a native Android application, which is available on Play Store.", "lang"=>"Android", "link"=>"https://play.google.com/store/apps/details?id=yosh.loci.com.xnotes", "img"=>#<ActionDispatch::Http::UploadedFile:0x00007fc482092cb8 @tempfile=#<Tempfile:/var/folders/qf/dldr76_j4d7427ftm2dgqbzm0000gn/T/RackMultipart20210122-1494-o0ewlk.JPEG>, @original_filename="DS1_5257.JPEG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"project[img]\"; filename=\"DS1_5257.JPEG\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Update Project", "id"=>"3"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProject Update (0.6ms)[0m  [1m[33mUPDATE "projects" SET "img" = ?, "updated_at" = ? WHERE "projects"."id" = ?[0m  [["img", "DS1_5257.JPEG"], ["updated_at", "2021-01-22 16:59:50.713393"], ["id", 3]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/admin/projects/3
+  [1m[36mAhoy::Visit Load (0.4ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (0.8ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed projects#update # "], ["properties", "{\"_method\":\"patch\",\"authenticity_token\":\"t5boV5nVWE0ZHlXdP0KWpORQ4L2YoU+R5OmYH7scwHdGsaDq3AKXascRO+O6nnWzrfXGdDbW7sm3BunGdRRWwA==\",\"project\":{\"title\":\"X notes\",\"description\":\"A simple notes application that offers basic note taking features accompanied by a great design. Developed as a native Android application, which is available on Play Store.\",\"lang\":\"Android\",\"link\":\"https://play.google.com/store/apps/details?id=yosh.loci.com.xnotes\",\"img\":{\"tempfile\":\"#\\u003cFile:0x00007fc48191fbc0\\u003e\",\"original_filename\":\"DS1_5257.JPEG\",\"content_type\":\"image/jpeg\",\"headers\":\"Content-Disposition: form-data; name=\\\"project[img]\\\"; filename=\\\"DS1_5257.JPEG\\\"\\r\\nContent-Type: image/jpeg\\r\\n\"}},\"commit\":\"Update Project\",\"controller\":\"admin/projects\",\"action\":\"update\",\"id\":\"3\"}"], ["time", "2021-01-22 16:59:50.761844"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 302 Found in 94ms (ActiveRecord: 5.3ms | Allocations: 17281)
+
+
+Started GET "/admin/projects/3" for ::1 at 2021-01-22 18:59:50 +0200
+Processing by Admin::ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/show.html.arb
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "Project"], ["resource_id", 3], ["namespace", "admin"]]
+  [1m[36mActiveAdmin::Comment Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?[0m  [["resource_type", "Project"], ["resource_id", 3], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  Rendered /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/show.html.arb (Duration: 79.9ms | Allocations: 37174)
+  [1m[36mAhoy::Visit Load (0.3ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (0.8ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed projects#show # "], ["properties", "{\"controller\":\"admin/projects\",\"action\":\"show\",\"id\":\"3\"}"], ["time", "2021-01-22 16:59:50.876517"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 103ms (Views: 80.1ms | ActiveRecord: 6.0ms | Allocations: 43794)
+
+
+Started GET "/" for ::1 at 2021-01-22 18:59:52 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/home/index.html.erb:71
+  Rendered home/index.html.erb within layouts/application (Duration: 37.2ms | Allocations: 4361)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mAhoy::Visit Load (0.2ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (2.7ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed home#index # "], ["properties", "{\"controller\":\"home\",\"action\":\"index\"}"], ["time", "2021-01-22 16:59:52.179150"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 92ms (Views: 70.7ms | ActiveRecord: 5.1ms | Allocations: 12398)
+
+
+Started GET "/admin/projects/3/edit" for ::1 at 2021-01-22 19:00:04 +0200
+Processing by Admin::ProjectsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/edit.html.arb (Duration: 85.9ms | Allocations: 28955)
+  [1m[36mAhoy::Visit Load (0.4ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (0.7ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed projects#edit # "], ["properties", "{\"controller\":\"admin/projects\",\"action\":\"edit\",\"id\":\"3\"}"], ["time", "2021-01-22 17:00:04.260622"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 130ms (Views: 100.9ms | ActiveRecord: 4.4ms | Allocations: 35554)
+
+
+Started PATCH "/admin/projects/3" for ::1 at 2021-01-22 19:00:55 +0200
+Processing by Admin::ProjectsController#update as HTML
+  Parameters: {"authenticity_token"=>"D7lp4vyRCc1iMjAW2eXAr0loFGWVyCOcr1y/TIhMdyn+niFfuUbG6rw9XihcOSO4AM0yrDu/gsT8s86VRkThng==", "project"=>{"title"=>"X notes", "description"=>"A simple notes application that offers basic note taking features accompanied by a great design. Developed as a native Android application, which is available on Play Store.", "lang"=>"Android", "link"=>"https://play.google.com/store/apps/details?id=yosh.loci.com.xnotes", "img"=>#<ActionDispatch::Http::UploadedFile:0x00007fc4838a57d8 @tempfile=#<Tempfile:/var/folders/qf/dldr76_j4d7427ftm2dgqbzm0000gn/T/RackMultipart20210122-1494-1muwvo5.jpg>, @original_filename="xnotes2.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"project[img]\"; filename=\"xnotes2.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Update Project", "id"=>"3"}
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProject Update (1.0ms)[0m  [1m[33mUPDATE "projects" SET "img" = ?, "updated_at" = ? WHERE "projects"."id" = ?[0m  [["img", "xnotes2.jpg"], ["updated_at", "2021-01-22 17:00:56.018978"], ["id", 3]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/admin/projects/3
+  [1m[36mAhoy::Visit Load (0.5ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (4.0ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed projects#update # "], ["properties", "{\"_method\":\"patch\",\"authenticity_token\":\"D7lp4vyRCc1iMjAW2eXAr0loFGWVyCOcr1y/TIhMdyn+niFfuUbG6rw9XihcOSO4AM0yrDu/gsT8s86VRkThng==\",\"project\":{\"title\":\"X notes\",\"description\":\"A simple notes application that offers basic note taking features accompanied by a great design. Developed as a native Android application, which is available on Play Store.\",\"lang\":\"Android\",\"link\":\"https://play.google.com/store/apps/details?id=yosh.loci.com.xnotes\",\"img\":{\"tempfile\":\"#\\u003cFile:0x00007fc47e460358\\u003e\",\"original_filename\":\"xnotes2.jpg\",\"content_type\":\"image/jpeg\",\"headers\":\"Content-Disposition: form-data; name=\\\"project[img]\\\"; filename=\\\"xnotes2.jpg\\\"\\r\\nContent-Type: image/jpeg\\r\\n\"}},\"commit\":\"Update Project\",\"controller\":\"admin/projects\",\"action\":\"update\",\"id\":\"3\"}"], ["time", "2021-01-22 17:00:56.080355"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 302 Found in 173ms (ActiveRecord: 11.4ms | Allocations: 14327)
+
+
+Started GET "/admin/projects/3" for ::1 at 2021-01-22 19:00:56 +0200
+Processing by Admin::ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/show.html.arb
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "Project"], ["resource_id", 3], ["namespace", "admin"]]
+  [1m[36mActiveAdmin::Comment Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?[0m  [["resource_type", "Project"], ["resource_id", 3], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  Rendered /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/show.html.arb (Duration: 146.3ms | Allocations: 31371)
+  [1m[36mAhoy::Visit Load (0.3ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (0.6ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed projects#show # "], ["properties", "{\"controller\":\"admin/projects\",\"action\":\"show\",\"id\":\"3\"}"], ["time", "2021-01-22 17:00:56.364909"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 211ms (Views: 148.2ms | ActiveRecord: 4.6ms | Allocations: 38012)
+
+
+Started GET "/" for ::1 at 2021-01-22 19:00:57 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mProject Load (1.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/home/index.html.erb:71
+  Rendered home/index.html.erb within layouts/application (Duration: 50.0ms | Allocations: 4362)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mAhoy::Visit Load (0.3ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (3.5ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed home#index # "], ["properties", "{\"controller\":\"home\",\"action\":\"index\"}"], ["time", "2021-01-22 17:00:57.715850"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 111ms (Views: 85.5ms | ActiveRecord: 7.5ms | Allocations: 12388)
+
+
+Started GET "/admin/projects" for ::1 at 2021-01-22 19:01:03 +0200
+Processing by Admin::ProjectsController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "projects" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "projects" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "projects" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" ORDER BY "projects"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/index.html.arb (Duration: 101.6ms | Allocations: 45687)
+  [1m[36mAhoy::Visit Load (0.4ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (0.9ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed projects#index # "], ["properties", "{\"controller\":\"admin/projects\",\"action\":\"index\"}"], ["time", "2021-01-22 17:01:03.264615"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 123ms (Views: 101.6ms | ActiveRecord: 4.2ms | Allocations: 51345)
+
+
+Started GET "/admin/projects/4/edit" for ::1 at 2021-01-22 19:01:06 +0200
+Processing by Admin::ProjectsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/edit.html.arb (Duration: 74.1ms | Allocations: 29337)
+  [1m[36mAhoy::Visit Load (0.2ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (0.7ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed projects#edit # "], ["properties", "{\"controller\":\"admin/projects\",\"action\":\"edit\",\"id\":\"4\"}"], ["time", "2021-01-22 17:01:06.899634"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 109ms (Views: 82.6ms | ActiveRecord: 3.6ms | Allocations: 35937)
+
+
+Started PATCH "/admin/projects/4" for ::1 at 2021-01-22 19:01:15 +0200
+Processing by Admin::ProjectsController#update as HTML
+  Parameters: {"authenticity_token"=>"LNemRd64f0rG+YRdAqzVKZKi7qEOvrc/cEyJG08PN5nd8O74m2+wbRj26mOHcDY+2wfIaKDJFmcjo/jCgQehLg==", "project"=>{"title"=>"test", "description"=>"asdffsfafadsdfasa dasdsa", "lang"=>"PHP", "link"=>"https://digitaldentalco.com/views/caseSearch.html", "img"=>#<ActionDispatch::Http::UploadedFile:0x00007fc481616d20 @tempfile=#<Tempfile:/var/folders/qf/dldr76_j4d7427ftm2dgqbzm0000gn/T/RackMultipart20210122-1494-12dzahv.jpg>, @original_filename="abo.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"project[img]\"; filename=\"abo.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Update Project", "id"=>"4"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProject Update (1.9ms)[0m  [1m[33mUPDATE "projects" SET "img" = ?, "updated_at" = ? WHERE "projects"."id" = ?[0m  [["img", "abo.jpg"], ["updated_at", "2021-01-22 17:01:15.660626"], ["id", 4]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/admin/projects/4
+  [1m[36mAhoy::Visit Load (0.4ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (1.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (1.2ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed projects#update # "], ["properties", "{\"_method\":\"patch\",\"authenticity_token\":\"LNemRd64f0rG+YRdAqzVKZKi7qEOvrc/cEyJG08PN5nd8O74m2+wbRj26mOHcDY+2wfIaKDJFmcjo/jCgQehLg==\",\"project\":{\"title\":\"test\",\"description\":\"asdffsfafadsdfasa dasdsa\",\"lang\":\"PHP\",\"link\":\"https://digitaldentalco.com/views/caseSearch.html\",\"img\":{\"tempfile\":\"#\\u003cFile:0x00007fc48718aee0\\u003e\",\"original_filename\":\"abo.jpg\",\"content_type\":\"image/jpeg\",\"headers\":\"Content-Disposition: form-data; name=\\\"project[img]\\\"; filename=\\\"abo.jpg\\\"\\r\\nContent-Type: image/jpeg\\r\\n\"}},\"commit\":\"Update Project\",\"controller\":\"admin/projects\",\"action\":\"update\",\"id\":\"4\"}"], ["time", "2021-01-22 17:01:15.692709"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 302 Found in 89ms (ActiveRecord: 10.6ms | Allocations: 14320)
+
+
+Started GET "/admin/projects/4" for ::1 at 2021-01-22 19:01:15 +0200
+Processing by Admin::ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/show.html.arb
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "Project"], ["resource_id", 4], ["namespace", "admin"]]
+  [1m[36mActiveAdmin::Comment Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?[0m  [["resource_type", "Project"], ["resource_id", 4], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  Rendered /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/show.html.arb (Duration: 79.5ms | Allocations: 31923)
+  [1m[36mAhoy::Visit Load (0.2ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (1.1ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed projects#show # "], ["properties", "{\"controller\":\"admin/projects\",\"action\":\"show\",\"id\":\"4\"}"], ["time", "2021-01-22 17:01:15.861856"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 123ms (Views: 89.0ms | ActiveRecord: 4.7ms | Allocations: 41841)
+
+
+Started GET "/" for ::1 at 2021-01-22 19:01:18 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/home/index.html.erb:71
+  Rendered home/index.html.erb within layouts/application (Duration: 28.9ms | Allocations: 4362)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mAhoy::Visit Load (0.2ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (2.7ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed home#index # "], ["properties", "{\"controller\":\"home\",\"action\":\"index\"}"], ["time", "2021-01-22 17:01:18.275430"]]
   ↳ app/controllers/application_controller.rb:5:in `track_action'
   [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
   ↳ app/controllers/application_controller.rb:5:in `track_action'
-Completed 200 OK in 703ms (Views: 240.4ms | ActiveRecord: 6.1ms | Allocations: 185653)
+Completed 200 OK in 87ms (Views: 67.0ms | ActiveRecord: 4.9ms | Allocations: 12392)
 
 
-Started GET "/home/1" for 192.168.1.13 at 2021-01-17 10:56:49 +0200
-Cannot render console from 192.168.1.13! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/home/4" for ::1 at 2021-01-22 19:01:36 +0200
 Processing by HomeController#show as JSON
-  Parameters: {"id"=>"1"}
-  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Parameters: {"id"=>"4"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
   ↳ app/controllers/home_controller.rb:8:in `show'
-  [1m[36mAhoy::Visit Load (0.2ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "4e0948b4-1886-4e94-b03e-ad765ae97c91"], ["LIMIT", 1]]
+  [1m[36mAhoy::Visit Load (0.2ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
   ↳ app/controllers/application_controller.rb:5:in `track_action'
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   ↳ app/controllers/application_controller.rb:5:in `track_action'
-  [1m[36mAhoy::Event Create (1.3ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed home#show # "], ["properties", "{\"controller\":\"home\",\"action\":\"show\",\"id\":\"1\"}"], ["time", "2021-01-17 08:56:49.666123"]]
+  [1m[36mAhoy::Event Create (0.7ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed home#show # "], ["properties", "{\"controller\":\"home\",\"action\":\"show\",\"id\":\"4\"}"], ["time", "2021-01-22 17:01:36.262000"]]
   ↳ app/controllers/application_controller.rb:5:in `track_action'
-  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
   ↳ app/controllers/application_controller.rb:5:in `track_action'
-Completed 200 OK in 19ms (Views: 0.7ms | ActiveRecord: 3.8ms | Allocations: 4768)
+Completed 200 OK in 20ms (Views: 0.5ms | ActiveRecord: 2.4ms | Allocations: 4596)
 
 
-Started GET "/" for 192.168.1.12 at 2021-01-17 10:56:56 +0200
-Cannot render console from 192.168.1.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/home/4" for ::1 at 2021-01-22 19:01:41 +0200
+Processing by HomeController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `show'
+  [1m[36mAhoy::Visit Load (0.6ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (1.9ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed home#show # "], ["properties", "{\"controller\":\"home\",\"action\":\"show\",\"id\":\"4\"}"], ["time", "2021-01-22 17:01:41.054131"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (9.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 38ms (Views: 4.0ms | ActiveRecord: 12.1ms | Allocations: 4579)
+
+
+Started GET "/admin/projects/4/edit" for ::1 at 2021-01-22 19:01:47 +0200
+Processing by Admin::ProjectsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Project Load (0.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/edit.html.arb (Duration: 86.4ms | Allocations: 29298)
+  [1m[36mAhoy::Visit Load (0.3ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (2.4ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed projects#edit # "], ["properties", "{\"controller\":\"admin/projects\",\"action\":\"edit\",\"id\":\"4\"}"], ["time", "2021-01-22 17:01:47.550955"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 126ms (Views: 90.1ms | ActiveRecord: 8.4ms | Allocations: 35895)
+
+
+Started PATCH "/admin/projects/4" for ::1 at 2021-01-22 19:01:58 +0200
+Processing by Admin::ProjectsController#update as HTML
+  Parameters: {"authenticity_token"=>"nupAb5S2jpP5BF7NowQd2PObTS4bjgjHTNFhWhmeKRxvzQjS0WFBtCcLMPMm2P7Puj5r57X5qZ8fPhCD15a/qw==", "project"=>{"title"=>"test", "description"=>"asdffsfafadsdfasa dasdsa", "lang"=>"PHP", "link"=>"https://digitaldentalco.com/views/caseSearch.html", "img"=>#<ActionDispatch::Http::UploadedFile:0x00007fc483c27c08 @tempfile=#<Tempfile:/var/folders/qf/dldr76_j4d7427ftm2dgqbzm0000gn/T/RackMultipart20210122-1494-wd1ghe.png>, @original_filename="Screen Shot 2021-01-15 at 5.25.32 PM.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"project[img]\"; filename=\"Screen Shot 2021-01-15 at 5.25.32 PM.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Update Project", "id"=>"4"}
+  [1m[36mAdminUser Load (1.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProject Update (0.7ms)[0m  [1m[33mUPDATE "projects" SET "img" = ?, "updated_at" = ? WHERE "projects"."id" = ?[0m  [["img", "Screen_Shot_2021-01-15_at_5.25.32_PM.png"], ["updated_at", "2021-01-22 17:01:58.165910"], ["id", 4]]
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/admin/projects/4
+  [1m[36mAhoy::Visit Load (0.3ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (1.9ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed projects#update # "], ["properties", "{\"_method\":\"patch\",\"authenticity_token\":\"nupAb5S2jpP5BF7NowQd2PObTS4bjgjHTNFhWhmeKRxvzQjS0WFBtCcLMPMm2P7Puj5r57X5qZ8fPhCD15a/qw==\",\"project\":{\"title\":\"test\",\"description\":\"asdffsfafadsdfasa dasdsa\",\"lang\":\"PHP\",\"link\":\"https://digitaldentalco.com/views/caseSearch.html\",\"img\":{\"tempfile\":\"#\\u003cFile:0x00007fc483c3a3a8\\u003e\",\"original_filename\":\"Screen Shot 2021-01-15 at 5.25.32 PM.png\",\"content_type\":\"image/png\",\"headers\":\"Content-Disposition: form-data; name=\\\"project[img]\\\"; filename=\\\"Screen Shot 2021-01-15 at 5.25.32 PM.png\\\"\\r\\nContent-Type: image/png\\r\\n\"}},\"commit\":\"Update Project\",\"controller\":\"admin/projects\",\"action\":\"update\",\"id\":\"4\"}"], ["time", "2021-01-22 17:01:58.207823"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 302 Found in 89ms (ActiveRecord: 12.1ms | Allocations: 14328)
+
+
+Started GET "/admin/projects/4" for ::1 at 2021-01-22 19:01:58 +0200
+Processing by Admin::ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/show.html.arb
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ?[0m  [["resource_type", "Project"], ["resource_id", 4], ["namespace", "admin"]]
+  [1m[36mActiveAdmin::Comment Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = ? AND "active_admin_comments"."resource_id" = ? AND "active_admin_comments"."namespace" = ? LIMIT ? OFFSET ?[0m  [["resource_type", "Project"], ["resource_id", 4], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  Rendered /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/show.html.arb (Duration: 88.4ms | Allocations: 37394)
+  [1m[36mAhoy::Visit Load (0.3ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (0.8ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed projects#show # "], ["properties", "{\"controller\":\"admin/projects\",\"action\":\"show\",\"id\":\"4\"}"], ["time", "2021-01-22 17:01:58.345296"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 137ms (Views: 89.2ms | ActiveRecord: 5.1ms | Allocations: 46955)
+
+
+Started GET "/" for ::1 at 2021-01-22 19:02:00 +0200
 Processing by HomeController#index as HTML
   Rendering home/index.html.erb within layouts/application
-  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
   ↳ app/views/home/index.html.erb:71
-  Rendered home/index.html.erb within layouts/application (Duration: 11.6ms | Allocations: 4265)
+  Rendered home/index.html.erb within layouts/application (Duration: 22.6ms | Allocations: 4362)
 [Webpacker] Everything's up-to-date. Nothing to do
-  [1m[36mAhoy::Visit Load (0.3ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "4c8c6d10-f266-40db-a629-486b24c00fcb"], ["LIMIT", 1]]
+  [1m[36mAhoy::Visit Load (0.3ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
   ↳ app/controllers/application_controller.rb:5:in `track_action'
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   ↳ app/controllers/application_controller.rb:5:in `track_action'
-  [1m[36mAhoy::Event Create (3.2ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 5], ["name", "Processed home#index # "], ["properties", "{\"controller\":\"home\",\"action\":\"index\"}"], ["time", "2021-01-17 08:56:56.705866"]]
+  [1m[36mAhoy::Event Create (0.8ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed home#index # "], ["properties", "{\"controller\":\"home\",\"action\":\"index\"}"], ["time", "2021-01-22 17:02:00.210376"]]
   ↳ app/controllers/application_controller.rb:5:in `track_action'
-  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
   ↳ app/controllers/application_controller.rb:5:in `track_action'
-Completed 200 OK in 80ms (Views: 49.3ms | ActiveRecord: 6.1ms | Allocations: 12257)
+Completed 200 OK in 65ms (Views: 47.7ms | ActiveRecord: 4.5ms | Allocations: 12380)
 
 
-Started GET "/home/1" for 192.168.1.12 at 2021-01-17 10:57:15 +0200
-Cannot render console from 192.168.1.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started DELETE "/admin/projects/4" for ::1 at 2021-01-22 19:02:12 +0200
+Processing by Admin::ProjectsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2yDGxlNYXcKeslHzFwlxFpZ32fuw3zasee+h9w0/R4IqB457Fo+S5UC9P82S1ZIB39L/Mh6ol/QqANAuwzfRNQ==", "id"=>"4"}
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProject Destroy (1.0ms)[0m  [1m[31mDELETE FROM "projects" WHERE "projects"."id" = ?[0m  [["id", 4]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/admin/projects
+  [1m[36mAhoy::Visit Load (0.4ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (0.7ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed projects#destroy # "], ["properties", "{\"_method\":\"delete\",\"authenticity_token\":\"2yDGxlNYXcKeslHzFwlxFpZ32fuw3zasee+h9w0/R4IqB457Fo+S5UC9P82S1ZIB39L/Mh6ol/QqANAuwzfRNQ==\",\"controller\":\"admin/projects\",\"action\":\"destroy\",\"id\":\"4\"}"], ["time", "2021-01-22 17:02:12.702154"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 302 Found in 61ms (ActiveRecord: 9.7ms | Allocations: 14911)
+
+
+Started GET "/admin/projects" for ::1 at 2021-01-22 19:02:12 +0200
+Processing by Admin::ProjectsController#index as HTML
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "projects" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "projects" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "projects"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "projects" LIMIT ? OFFSET ?) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" ORDER BY "projects"."id" desc LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered /Users/shamssherif/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activeadmin-2.8.1/app/views/active_admin/resource/index.html.arb (Duration: 159.0ms | Allocations: 49963)
+  [1m[36mAhoy::Visit Load (0.3ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (0.6ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed projects#index # "], ["properties", "{\"controller\":\"admin/projects\",\"action\":\"index\"}"], ["time", "2021-01-22 17:02:12.902909"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 173ms (Views: 158.5ms | ActiveRecord: 4.5ms | Allocations: 55803)
+
+
+Started GET "/" for ::1 at 2021-01-22 19:03:24 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/home/index.html.erb:71
+  Rendered home/index.html.erb within layouts/application (Duration: 26.3ms | Allocations: 4255)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mAhoy::Visit Load (0.5ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (1.2ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed home#index # "], ["properties", "{\"controller\":\"home\",\"action\":\"index\"}"], ["time", "2021-01-22 17:03:24.817131"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (4.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 85ms (Views: 57.6ms | ActiveRecord: 6.5ms | Allocations: 12306)
+
+
+Started GET "/home/1" for ::1 at 2021-01-22 19:06:37 +0200
 Processing by HomeController#show as JSON
   Parameters: {"id"=>"1"}
   [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
   ↳ app/controllers/home_controller.rb:8:in `show'
-  [1m[36mAhoy::Visit Load (0.2ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "4c8c6d10-f266-40db-a629-486b24c00fcb"], ["LIMIT", 1]]
+  [1m[36mAhoy::Visit Load (0.3ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (1.1ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed home#show # "], ["properties", "{\"controller\":\"home\",\"action\":\"show\",\"id\":\"1\"}"], ["time", "2021-01-22 17:06:37.575425"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 26ms (Views: 0.9ms | ActiveRecord: 4.0ms | Allocations: 4600)
+
+
+Started GET "/home/2" for ::1 at 2021-01-22 19:08:38 +0200
+Processing by HomeController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `show'
+  [1m[36mAhoy::Visit Load (0.6ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
   ↳ app/controllers/application_controller.rb:5:in `track_action'
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   ↳ app/controllers/application_controller.rb:5:in `track_action'
-  [1m[36mAhoy::Event Create (0.8ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 5], ["name", "Processed home#show # "], ["properties", "{\"controller\":\"home\",\"action\":\"show\",\"id\":\"1\"}"], ["time", "2021-01-17 08:57:15.244022"]]
+  [1m[36mAhoy::Event Create (1.8ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed home#show # "], ["properties", "{\"controller\":\"home\",\"action\":\"show\",\"id\":\"2\"}"], ["time", "2021-01-22 17:08:38.554209"]]
   ↳ app/controllers/application_controller.rb:5:in `track_action'
-  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
   ↳ app/controllers/application_controller.rb:5:in `track_action'
-Completed 200 OK in 18ms (Views: 0.8ms | ActiveRecord: 3.6ms | Allocations: 4568)
+Completed 200 OK in 36ms (Views: 1.0ms | ActiveRecord: 5.4ms | Allocations: 4600)
 
 
-Started GET "/home/2" for 192.168.1.13 at 2021-01-17 10:57:50 +0200
-Cannot render console from 192.168.1.13! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/home/2" for ::1 at 2021-01-22 19:09:29 +0200
+Processing by HomeController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `show'
+  [1m[36mAhoy::Visit Load (0.2ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (1.8ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed home#show # "], ["properties", "{\"controller\":\"home\",\"action\":\"show\",\"id\":\"2\"}"], ["time", "2021-01-22 17:09:29.936120"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (8.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 37ms (Views: 0.8ms | ActiveRecord: 10.7ms | Allocations: 4586)
+
+
+Started GET "/home/1" for ::1 at 2021-01-22 19:20:41 +0200
+Processing by HomeController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (1.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `show'
+  [1m[36mAhoy::Visit Load (2.0ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (5.3ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed home#show # "], ["properties", "{\"controller\":\"home\",\"action\":\"show\",\"id\":\"1\"}"], ["time", "2021-01-22 17:20:41.945059"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 83ms (Views: 6.3ms | ActiveRecord: 10.7ms | Allocations: 4666)
+
+
+Started GET "/home/1" for ::1 at 2021-01-22 19:26:31 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HomeController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `show'
+  [1m[36mAhoy::Visit Load (0.6ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (1.6ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed home#show # "], ["properties", "{\"controller\":\"home\",\"action\":\"show\",\"id\":\"1\"}"], ["time", "2021-01-22 17:26:31.753480"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (9.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 35ms (Views: 1.6ms | ActiveRecord: 12.0ms | Allocations: 4665)
+
+
+Started GET "/" for ::1 at 2021-01-22 19:30:04 +0200
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/home/index.html.erb:71
+  Rendered home/index.html.erb within layouts/application (Duration: 42.0ms | Allocations: 4275)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mAhoy::Visit Load (0.2ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (0.7ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed home#index # "], ["properties", "{\"controller\":\"home\",\"action\":\"index\"}"], ["time", "2021-01-22 17:30:04.290216"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 93ms (Views: 82.9ms | ActiveRecord: 2.6ms | Allocations: 12274)
+
+
+Started GET "/home/2" for ::1 at 2021-01-22 19:30:13 +0200
 Processing by HomeController#show as JSON
   Parameters: {"id"=>"2"}
   [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
   ↳ app/controllers/home_controller.rb:8:in `show'
-  [1m[36mAhoy::Visit Load (0.2ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "4e0948b4-1886-4e94-b03e-ad765ae97c91"], ["LIMIT", 1]]
+  [1m[36mAhoy::Visit Load (0.4ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
   ↳ app/controllers/application_controller.rb:5:in `track_action'
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   ↳ app/controllers/application_controller.rb:5:in `track_action'
-  [1m[36mAhoy::Event Create (0.8ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed home#show # "], ["properties", "{\"controller\":\"home\",\"action\":\"show\",\"id\":\"2\"}"], ["time", "2021-01-17 08:57:50.473275"]]
+  [1m[36mAhoy::Event Create (1.2ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed home#show # "], ["properties", "{\"controller\":\"home\",\"action\":\"show\",\"id\":\"2\"}"], ["time", "2021-01-22 17:30:13.628056"]]
   ↳ app/controllers/application_controller.rb:5:in `track_action'
-  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
   ↳ app/controllers/application_controller.rb:5:in `track_action'
-Completed 200 OK in 18ms (Views: 0.7ms | ActiveRecord: 4.7ms | Allocations: 4591)
+Completed 200 OK in 31ms (Views: 0.9ms | ActiveRecord: 6.5ms | Allocations: 4589)
 
 
-  [1m[35m (2.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
-  [1m[35m (6.4ms)[0m  [1m[35mCREATE DATABASE `my_website` DEFAULT CHARACTER SET `utf8`[0m
+Started GET "/home/1" for ::1 at 2021-01-22 19:30:31 +0200
+Processing by HomeController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `show'
+  [1m[36mAhoy::Visit Load (0.3ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (1.2ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed home#show # "], ["properties", "{\"controller\":\"home\",\"action\":\"show\",\"id\":\"1\"}"], ["time", "2021-01-22 17:30:31.053936"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 33ms (Views: 1.2ms | ActiveRecord: 4.1ms | Allocations: 4588)
+
+
+Started GET "/home/3" for ::1 at 2021-01-22 19:30:44 +0200
+Processing by HomeController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:8:in `show'
+  [1m[36mAhoy::Visit Load (0.7ms)[0m  [1m[34mSELECT "ahoy_visits".* FROM "ahoy_visits" WHERE "ahoy_visits"."visit_token" = ? ORDER BY "ahoy_visits"."id" ASC LIMIT ?[0m  [["visit_token", "24815d30-648f-4672-8fb8-3acb4fb66d19"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (6.4ms)[0m  [1m[32mINSERT INTO "ahoy_events" ("visit_id", "name", "properties", "time") VALUES (?, ?, ?, ?)[0m  [["visit_id", 4], ["name", "Processed home#show # "], ["properties", "{\"controller\":\"home\",\"action\":\"show\",\"id\":\"3\"}"], ["time", "2021-01-22 17:30:44.850246"]]
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (11.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 67ms (Views: 2.1ms | ActiveRecord: 19.5ms | Allocations: 7537)
+
+
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (6.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE DATABASE `development` DEFAULT CHARACTER SET `utf8`[0m
   [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
-  [1m[35m (2.7ms)[0m  [1m[35mCREATE DATABASE `test_db_name` DEFAULT CHARACTER SET `utf8`[0m
-  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
-  [1m[35m (21.5ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
-  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE DATABASE `test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (26.5ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
   [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
-  [1m[35m (0.5ms)[0m  [1m[34mSELECT GET_LOCK('7082848356648732255', 0)[0m
-  [1m[35m (10.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT GET_LOCK('6643483464595264770', 0)[0m
+  [1m[35m (7.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
 Migrating to CreateProjects (20210116163430)
-  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE `projects` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `title` varchar(255), `description` text, `img` varchar(255), `link` varchar(255), `lang` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
-  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mprimary::SchemaMigration Create (1.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210116163430')[0m
-  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
-Migrating to DeviseCreateAdminUsers (20210116163645)
-  [1m[35m (16.6ms)[0m  [1m[35mCREATE TABLE `admin_users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
-  [1m[35m (21.2ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_admin_users_on_email`  ON `admin_users` (`email`) [0m
-  [1m[35m (13.0ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_admin_users_on_reset_password_token`  ON `admin_users` (`reset_password_token`) [0m
-  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210116163645')[0m
-  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
-Migrating to CreateActiveAdminComments (20210116163653)
-  [1m[35m (30.4ms)[0m  [1m[35mCREATE TABLE `active_admin_comments` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `namespace` varchar(255), `body` text, `resource_type` varchar(255), `resource_id` bigint, `author_type` varchar(255), `author_id` bigint, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL,  INDEX `index_active_admin_comments_on_resource_type_and_resource_id`  (`resource_type`, `resource_id`),  INDEX `index_active_admin_comments_on_author_type_and_author_id`  (`author_type`, `author_id`))[0m
-  [1m[35m (25.7ms)[0m  [1m[35mCREATE  INDEX `index_active_admin_comments_on_namespace`  ON `active_admin_comments` (`namespace`) [0m
-  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210116163653')[0m
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE `projects` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `title` varchar(255), `description` text, `img` varchar(255), `link` varchar(255), `lang` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (3.9ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210116163430')[0m
   [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
-Migrating to CreateMessages (20210116173138)
-  [1m[35m (12.5ms)[0m  [1m[35mCREATE TABLE `messages` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `email` varchar(255), `msg` text, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mprimary::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210116173138')[0m
-  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
-Migrating to CreateAhoyVisitsAndEvents (20210116192411)
-  [1m[35m (27.0ms)[0m  [1m[35mCREATE TABLE `ahoy_visits` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `visit_token` varchar(255), `visitor_token` varchar(255), `user_id` bigint, `ip` varchar(255), `user_agent` text, `referrer` text, `referring_domain` varchar(255), `landing_page` text, `browser` varchar(255), `os` varchar(255), `device_type` varchar(255), `country` varchar(255), `region` varchar(255), `city` varchar(255), `latitude` float(24), `longitude` float(24), `utm_source` varchar(255), `utm_medium` varchar(255), `utm_term` varchar(255), `utm_content` varchar(255), `utm_campaign` varchar(255), `app_version` varchar(255), `os_version` varchar(255), `platform` varchar(255), `started_at` datetime,  INDEX `index_ahoy_visits_on_user_id`  (`user_id`))[0m
-  [1m[35m (14.9ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_ahoy_visits_on_visit_token`  ON `ahoy_visits` (`visit_token`) [0m
-  [1m[35m (17.1ms)[0m  [1m[35mCREATE TABLE `ahoy_events` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `visit_id` bigint, `user_id` bigint, `name` varchar(255), `properties` text, `time` datetime,  INDEX `index_ahoy_events_on_visit_id`  (`visit_id`),  INDEX `index_ahoy_events_on_user_id`  (`user_id`))[0m
-  [1m[35m (11.1ms)[0m  [1m[35mCREATE  INDEX `index_ahoy_events_on_name_and_time`  ON `ahoy_events` (`name`, `time`) [0m
-  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mprimary::SchemaMigration Create (2.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210116192411')[0m
-  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
-  [1m[36mActiveRecord::InternalMetadata Load (2.7ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+Migrating to DeviseCreateAdminUsers (20210116163645)
+  [1m[35m (11.0ms)[0m  [1m[35mCREATE TABLE `admin_users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (21.7ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_admin_users_on_email`  ON `admin_users` (`email`) [0m
+  [1m[35m (14.2ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_admin_users_on_reset_password_token`  ON `admin_users` (`reset_password_token`) [0m
   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2021-01-21 16:50:22.115498', '2021-01-21 16:50:22.115498')[0m
-  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
-  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('7082848356648732255')[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210116163645')[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateActiveAdminComments (20210116163653)
+  [1m[35m (19.0ms)[0m  [1m[35mCREATE TABLE `active_admin_comments` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `namespace` varchar(255), `body` text, `resource_type` varchar(255), `resource_id` bigint, `author_type` varchar(255), `author_id` bigint, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL,  INDEX `index_active_admin_comments_on_resource_type_and_resource_id`  (`resource_type`, `resource_id`),  INDEX `index_active_admin_comments_on_author_type_and_author_id`  (`author_type`, `author_id`))[0m
+  [1m[35m (15.2ms)[0m  [1m[35mCREATE  INDEX `index_active_admin_comments_on_namespace`  ON `active_admin_comments` (`namespace`) [0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210116163653')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateMessages (20210116173138)
+  [1m[35m (36.6ms)[0m  [1m[35mCREATE TABLE `messages` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `email` varchar(255), `msg` text, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210116173138')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAhoyVisitsAndEvents (20210116192411)
+  [1m[35m (37.8ms)[0m  [1m[35mCREATE TABLE `ahoy_visits` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `visit_token` varchar(255), `visitor_token` varchar(255), `user_id` bigint, `ip` varchar(255), `user_agent` text, `referrer` text, `referring_domain` varchar(255), `landing_page` text, `browser` varchar(255), `os` varchar(255), `device_type` varchar(255), `country` varchar(255), `region` varchar(255), `city` varchar(255), `latitude` float(24), `longitude` float(24), `utm_source` varchar(255), `utm_medium` varchar(255), `utm_term` varchar(255), `utm_content` varchar(255), `utm_campaign` varchar(255), `app_version` varchar(255), `os_version` varchar(255), `platform` varchar(255), `started_at` datetime,  INDEX `index_ahoy_visits_on_user_id`  (`user_id`))[0m
+  [1m[35m (27.5ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_ahoy_visits_on_visit_token`  ON `ahoy_visits` (`visit_token`) [0m
+  [1m[35m (15.8ms)[0m  [1m[35mCREATE TABLE `ahoy_events` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `visit_id` bigint, `user_id` bigint, `name` varchar(255), `properties` text, `time` datetime,  INDEX `index_ahoy_events_on_visit_id`  (`visit_id`),  INDEX `index_ahoy_events_on_user_id`  (`user_id`))[0m
+  [1m[35m (15.3ms)[0m  [1m[35mCREATE  INDEX `index_ahoy_events_on_name_and_time`  ON `ahoy_events` (`name`, `time`) [0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210116192411')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2021-01-22 18:07:53.729242', '2021-01-22 18:07:53.729242')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('6643483464595264770')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
   [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (14.5ms)[0m  [1m[35mDROP TABLE IF EXISTS `active_admin_comments` CASCADE[0m
+  [1m[35m (14.9ms)[0m  [1m[35mCREATE TABLE `active_admin_comments` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `namespace` varchar(255), `body` text, `resource_type` varchar(255), `resource_id` bigint, `author_type` varchar(255), `author_id` bigint, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL,  INDEX `index_active_admin_comments_on_author_type_and_author_id`  (`author_type`, `author_id`),  INDEX `index_active_admin_comments_on_namespace`  (`namespace`),  INDEX `index_active_admin_comments_on_resource_type_and_resource_id`  (`resource_type`, `resource_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (6.5ms)[0m  [1m[35mDROP TABLE IF EXISTS `admin_users` CASCADE[0m
+  [1m[35m (11.9ms)[0m  [1m[35mCREATE TABLE `admin_users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, UNIQUE INDEX `index_admin_users_on_email`  (`email`), UNIQUE INDEX `index_admin_users_on_reset_password_token`  (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (7.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `ahoy_events` CASCADE[0m
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE TABLE `ahoy_events` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `visit_id` bigint, `user_id` bigint, `name` varchar(255), `properties` text, `time` datetime,  INDEX `index_ahoy_events_on_name_and_time`  (`name`, `time`),  INDEX `index_ahoy_events_on_user_id`  (`user_id`),  INDEX `index_ahoy_events_on_visit_id`  (`visit_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (13.6ms)[0m  [1m[35mDROP TABLE IF EXISTS `ahoy_visits` CASCADE[0m
+  [1m[35m (19.2ms)[0m  [1m[35mCREATE TABLE `ahoy_visits` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `visit_token` varchar(255), `visitor_token` varchar(255), `user_id` bigint, `ip` varchar(255), `user_agent` text, `referrer` text, `referring_domain` varchar(255), `landing_page` text, `browser` varchar(255), `os` varchar(255), `device_type` varchar(255), `country` varchar(255), `region` varchar(255), `city` varchar(255), `latitude` float(24), `longitude` float(24), `utm_source` varchar(255), `utm_medium` varchar(255), `utm_term` varchar(255), `utm_content` varchar(255), `utm_campaign` varchar(255), `app_version` varchar(255), `os_version` varchar(255), `platform` varchar(255), `started_at` datetime,  INDEX `index_ahoy_visits_on_user_id`  (`user_id`), UNIQUE INDEX `index_ahoy_visits_on_visit_token`  (`visit_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (6.4ms)[0m  [1m[35mDROP TABLE IF EXISTS `messages` CASCADE[0m
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE TABLE `messages` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `email` varchar(255), `msg` text, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (6.2ms)[0m  [1m[35mDROP TABLE IF EXISTS `projects` CASCADE[0m
+  [1m[35m (10.9ms)[0m  [1m[35mCREATE TABLE `projects` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `title` varchar(255), `description` text, `img` varchar(255), `link` varchar(255), `lang` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('schema_sha1', 'd21bd085c9b5628fd2b6f9ed4b8a151f46704a60', '2021-01-22 18:08:10.299141', '2021-01-22 18:08:10.299141')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
-  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (2.7ms)[0m  [1m[35mDROP TABLE IF EXISTS `active_admin_comments` CASCADE[0m
+  [1m[35m (13.0ms)[0m  [1m[35mCREATE TABLE `active_admin_comments` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `namespace` varchar(255), `body` text, `resource_type` varchar(255), `resource_id` bigint, `author_type` varchar(255), `author_id` bigint, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL,  INDEX `index_active_admin_comments_on_author_type_and_author_id`  (`author_type`, `author_id`),  INDEX `index_active_admin_comments_on_namespace`  (`namespace`),  INDEX `index_active_admin_comments_on_resource_type_and_resource_id`  (`resource_type`, `resource_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE IF EXISTS `admin_users` CASCADE[0m
+  [1m[35m (17.0ms)[0m  [1m[35mCREATE TABLE `admin_users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, UNIQUE INDEX `index_admin_users_on_email`  (`email`), UNIQUE INDEX `index_admin_users_on_reset_password_token`  (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (1.4ms)[0m  [1m[35mDROP TABLE IF EXISTS `ahoy_events` CASCADE[0m
+  [1m[35m (15.4ms)[0m  [1m[35mCREATE TABLE `ahoy_events` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `visit_id` bigint, `user_id` bigint, `name` varchar(255), `properties` text, `time` datetime,  INDEX `index_ahoy_events_on_name_and_time`  (`name`, `time`),  INDEX `index_ahoy_events_on_user_id`  (`user_id`),  INDEX `index_ahoy_events_on_visit_id`  (`visit_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (2.2ms)[0m  [1m[35mDROP TABLE IF EXISTS `ahoy_visits` CASCADE[0m
+  [1m[35m (17.0ms)[0m  [1m[35mCREATE TABLE `ahoy_visits` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `visit_token` varchar(255), `visitor_token` varchar(255), `user_id` bigint, `ip` varchar(255), `user_agent` text, `referrer` text, `referring_domain` varchar(255), `landing_page` text, `browser` varchar(255), `os` varchar(255), `device_type` varchar(255), `country` varchar(255), `region` varchar(255), `city` varchar(255), `latitude` float(24), `longitude` float(24), `utm_source` varchar(255), `utm_medium` varchar(255), `utm_term` varchar(255), `utm_content` varchar(255), `utm_campaign` varchar(255), `app_version` varchar(255), `os_version` varchar(255), `platform` varchar(255), `started_at` datetime,  INDEX `index_ahoy_visits_on_user_id`  (`user_id`), UNIQUE INDEX `index_ahoy_visits_on_visit_token`  (`visit_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE IF EXISTS `messages` CASCADE[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE `messages` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `email` varchar(255), `msg` text, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE IF EXISTS `projects` CASCADE[0m
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE `projects` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `title` varchar(255), `description` text, `img` varchar(255), `link` varchar(255), `lang` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20210116192411)[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20210116163430),
+(20210116163645),
+(20210116163653),
+(20210116173138);
+
+[0m
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2021-01-22 18:08:10.462404', '2021-01-22 18:08:10.462404')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (2.6ms)[0m  [1m[33mUPDATE `ar_internal_metadata` SET `ar_internal_metadata`.`value` = 'test', `ar_internal_metadata`.`updated_at` = '2021-01-22 18:08:10.471076' WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('schema_sha1', 'd21bd085c9b5628fd2b6f9ed4b8a151f46704a60', '2021-01-22 18:08:10.481517', '2021-01-22 18:08:10.481517')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2021-01-22 20:08:33 +0200
+  [1m[35m (0.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mProject Load (2.0ms)[0m  [1m[34mSELECT `projects`.* FROM `projects`[0m
+  ↳ app/views/home/index.html.erb:71
+  Rendered home/index.html.erb within layouts/application (Duration: 250.5ms | Allocations: 41278)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mAhoy::Visit Load (0.7ms)[0m  [1m[34mSELECT `ahoy_visits`.* FROM `ahoy_visits` WHERE `ahoy_visits`.`visit_token` = '24815d30-648f-4672-8fb8-3acb4fb66d19' ORDER BY `ahoy_visits`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (1.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[36mAhoy::Event Create (0.8ms)[0m  [1m[32mINSERT INTO `ahoy_events` (`visit_id`, `name`, `properties`, `time`) VALUES (4, 'Processed home#index # ', '{\"controller\":\"home\",\"action\":\"index\"}', '2021-01-22 18:08:34')[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:5:in `track_action'
+Completed 200 OK in 870ms (Views: 367.5ms | ActiveRecord: 18.1ms | Allocations: 186399)
+
+
