@@ -3,30 +3,30 @@
 # Table name: ahoy_visits
 #
 #  id               :bigint           not null, primary key
-#  app_version      :string(255)
-#  browser          :string(255)
-#  city             :string(255)
-#  country          :string(255)
-#  device_type      :string(255)
-#  ip               :string(255)
-#  landing_page     :text(65535)
-#  latitude         :float(24)
-#  longitude        :float(24)
-#  os               :string(255)
-#  os_version       :string(255)
-#  platform         :string(255)
-#  referrer         :text(65535)
-#  referring_domain :string(255)
-#  region           :string(255)
+#  app_version      :string
+#  browser          :string
+#  city             :string
+#  country          :string
+#  device_type      :string
+#  ip               :string
+#  landing_page     :text
+#  latitude         :float
+#  longitude        :float
+#  os               :string
+#  os_version       :string
+#  platform         :string
+#  referrer         :text
+#  referring_domain :string
+#  region           :string
 #  started_at       :datetime
-#  user_agent       :text(65535)
-#  utm_campaign     :string(255)
-#  utm_content      :string(255)
-#  utm_medium       :string(255)
-#  utm_source       :string(255)
-#  utm_term         :string(255)
-#  visit_token      :string(255)
-#  visitor_token    :string(255)
+#  user_agent       :text
+#  utm_campaign     :string
+#  utm_content      :string
+#  utm_medium       :string
+#  utm_source       :string
+#  utm_term         :string
+#  visit_token      :string
+#  visitor_token    :string
 #  user_id          :bigint
 #
 # Indexes

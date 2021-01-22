@@ -3,8 +3,8 @@
 # Table name: ahoy_events
 #
 #  id         :bigint           not null, primary key
-#  name       :string(255)
-#  properties :text(65535)
+#  name       :string
+#  properties :text
 #  time       :datetime
 #  user_id    :bigint
 #  visit_id   :bigint

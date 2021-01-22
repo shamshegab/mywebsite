@@ -3,9 +3,9 @@
 # Table name: messages
 #
 #  id         :bigint           not null, primary key
-#  email      :string(255)
-#  msg        :text(65535)
-#  name       :string(255)
+#  email      :string
+#  msg        :text
+#  name       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

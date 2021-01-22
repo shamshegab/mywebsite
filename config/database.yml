@@ -1,27 +1,27 @@
 development:
-  adapter: mysql2
-  encoding: utf8
+  adapter: postgresql
+  encoding: unicode
   reconnect: false
   database: development
-  username: root
+  username: postgres
   password: 
-  socket: /tmp/mysql.sock 
+
+
 test:
-  adapter: mysql2
-  encoding: utf8
+  adapter: postgresql
+  encoding: unicode
   reconnect: false
   database: test
 
-  username: root
+  username: postgres
   password: 
-  socket: /tmp/mysql.sock 
+
 
 production:
-  adapter: mysql2
-  encoding: utf8
+  adapter: postgresql
+  encoding: unicode
   reconnect: false
   database: production
 
-  username: root
-  password: qaz2wsx
-  socket: /tmp/mysql.sock 
+  username: rails
+  password: e42f9f6a523ac833f662b11b06d41b30
